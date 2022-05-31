@@ -8,8 +8,31 @@
 
 require 'faker'
 
+# creates categories based on CATEGORIES array
 CATEGORIES = ["lead", "chords", "pads", "bassline", "drum pattern", "pluck", ""]
+Category.destroy_all
+CATEGORIES.each do |category|
+  puts "creating a category:"
+  cat = Category.create(
+    {
+      name: category
+    }
+  )
+  puts "created #{cat.name} - Category"
+end
+
+# creates moods based on MOODS array
 MOODS = ["uplifting", "happy", "dramatic", "sad", "melancholic", "cinematic", "aggressive", "chill", ""]
+Mood.destroy_all
+MOODS.each do |mood|
+  puts "creating a mood:"
+  md = Mood.create(
+    {
+      name: mood
+    }
+  )
+  puts "created #{md.name} - mood"
+end
 
 # for sake of seeding:
 TIME_SIGNATURES = ["2/4", "3/4", "4/4", "2/2", "3/2", "4/2", "2/8", "3/8", "4/8"]
@@ -46,5 +69,27 @@ Midi.destroy_all
       user_id: User.pluck(:id).sample
     }
   )
+
+  # creating between 0 and 4 moods for a single midi
+  rand(0..4).times do
+    MidiMood.create(
+      {
+        midi: midi,
+        # mood: Mood.all.shuffle[0]
+        mood: Mood.all.sample
+      }
+    )
+  end
+
+  # creating between 0 and 3 categories for a single midi
+  rand(0..3).times do
+    MidiCategory.create(
+      {
+        midi: midi,
+        category: Category.all.sample
+      }
+    )
+  end
+
   puts "created #{midi.title}"
 end

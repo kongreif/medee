@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :username, presence: true
 
-  has_many :midis
+  has_many :midis, dependent: :destroy
   has_many :upvotes
 end
