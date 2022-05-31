@@ -3,6 +3,7 @@ class MidisController < ApplicationController
 
   def index
     @midis = policy_scope(Midi)
+    @midis = Midi.search_by_title(params[:query]) if params[:query].present?
   end
 
   def show

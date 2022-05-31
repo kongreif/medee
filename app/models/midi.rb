@@ -8,4 +8,17 @@ class Midi < ApplicationRecord
   has_many :midi_categories, dependent: :destroy
   has_many :categories, through: :midi_categories
   has_many :upvotes
+
+  # TODO: implement against mood, category, ...
+  # pg_search_scope :global_search,
+  # against: [ :title, :synopsis ],
+  # associated_against: {
+  #   director: [ :first_name, :last_name ]
+  # },
+  # using: {
+  #   tsearch: { prefix: true }
+  # }
+  # pg_search currently only against the title
+  include PgSearch::Model
+  pg_search_scope :search_by_title, against: [:title], using: { tsearch: { prefix: true } }
 end
