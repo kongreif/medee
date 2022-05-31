@@ -2,21 +2,25 @@
 
 <br>
 <br>
-<!--THE SEARCH FORM START -->
-<div>
-  <%= form_tag midis_path, method: :get, class: "d-flex" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Browse midis"
-    %>
-    <%= submit_tag "Go", class: "btn btn-primary" %>
-  <% end %>
+<!-- ask Johannes if there are any problems with styling this search-form please, thank you -->
+<!--SEARCH START -->
+<div data-controller="search-midis">
+  <div>
+    <%= form_with url: midis_path, method: :get, html: {class: "d-flex", data: {search_midis_target: "searchform"}} do |f| %>
+      <%= f.text_field :query,
+        class: "form-control",
+        placeholder: "Type a midi title",
+        value: params[:query],
+        data: {
+          search_midis_target: "searchinput",
+          action: "keyup->search-midis#update"
+        }
+      %>
+      <%= f.submit "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>
-<!-- THE SEARCH FORM END -->
-<br>
-<br>
+<!--SEARCH END -->
 
-<% @midis.each do |midi|%>
-  <p><%= midi.title %></p>
-<% end %>
+<!-- ask Johannes if there are any problems with styling this midi_list please, thank you -->
+<%= render "midi_list", midis: @midis %>
