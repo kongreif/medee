@@ -2,11 +2,11 @@ class MidisController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @midis = Midi.all
-    # authorize @midis
+    @midis = policy_scope(Midi)
+
   end
 
   def show
-    authorize @midi
+    # authorize @midis
   end
 end
