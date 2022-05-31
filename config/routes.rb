@@ -5,5 +5,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resource :midis
+
+  # resource :midis, only: %i[index show]
+
+  get "midis", to: "midis#index", as: :midis
 end
