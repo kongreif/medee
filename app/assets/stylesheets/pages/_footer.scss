@@ -1,0 +1,20 @@
+// .footer {
+//   background-color: rgb(173, 220, 220);
+//   height: 8vh;
+//   border: 1px solid black;
+//   // display: grid;
+//   // justify-content: center;
+//   // align-items: center;
+// }
+
+footer {
+  display: flex;
+  position: relative;
+  height:50px;
+  // left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
