@@ -1,5 +1,5 @@
 class MidiCategory < ApplicationRecord
-  validates :category, :category, presence: true
+  validates :category, :midi, presence: true
   belongs_to :category
   belongs_to :midi
 end
