@@ -1,8 +1,12 @@
-nav {
-  background-color: rgb(26, 147, 147);
-  height: 8vh;
-  border: 1px solid black;
-  // display: grid;
-  // justify-content: center;
-  // align-items: center;
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
 }
