@@ -3,7 +3,6 @@ class MidisController < ApplicationController
 
   def index
     @midis = policy_scope(Midi)
-
   end
 
   def show
