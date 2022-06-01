@@ -40,7 +40,7 @@
   top: 0;
   left: 0;
   background-color: rgb(210, 210, 210);
-  box-shadow: 0 0 20px $primary-blue, 0 0 20px $primary-blue, 0 0 40px $primary-blue;
+  box-shadow: 0 5px 20px 3px $primary-blue;
   transform-origin: bottom right;
   transition: transform 0.5s ease-out;
 }

@@ -73,8 +73,8 @@ header {
   height: 2px;
   bottom: 10px;
   left: 0;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0 0 40px $primary-blue, 0 0 50px $primary-blue, 0 0 40px $primary-blue;
+  background-color: rgb(210, 210, 210);
+  box-shadow: 0 -5px 20px 3.5px $primary-blue;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
