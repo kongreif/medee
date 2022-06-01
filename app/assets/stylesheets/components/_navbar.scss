@@ -21,10 +21,17 @@ header {
 .navbar-logo-section {}
 
 .navbar-link-section {
+  li {
+    padding: 20px;
+  }
+  margin: 0;
+  padding: 0;
   display: flex;
 }
 
 .navbar-sign-in-section {
+  padding: 0;
+  margin: 0;
   position: relative;
   display: flex;
   flex-direction: column;
