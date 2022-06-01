@@ -26,7 +26,6 @@ class MidisController < ApplicationController
   end
 
   def create
-    raise
     @midi = Midi.new(midi_params)
     @midi.user = current_user
     @midi.save!
