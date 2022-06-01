@@ -1,12 +1,29 @@
+
 .avatar-dropdown-menu {
-  .avatar-dropdown-item {
-  }
-  // display: none;
   position: absolute;
-  top: 6vh;
-  right: -20px;
-  min-width: 120px;
-  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  top: 8.2vh;
+  right: 2px;
   z-index: 1;
-  background-color: white;
+  background-color: $black;
+  display: none;
+}
+.avatar-dropdown-menu > li:hover{
+  box-shadow: 0 0 10px white;
+
+}
+
+.navbar-sign-in-section:hover .avatar-dropdown-menu{
+    display: block;
+  }
+
+
+.avatar-dropdown-menu > li {
+  line-height: 40px;
+  width: 130px;
+  margin-bottom: 5px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: $black;
 }
