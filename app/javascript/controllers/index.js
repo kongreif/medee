@@ -4,5 +4,5 @@
 
 import { application } from "./application"
 
-import HelloController from "./hello_controller"
-application.register("hello", HelloController)
+import SearchMidisController from "./search_midis_controller.js"
+application.register("search-midis", SearchMidisController)
