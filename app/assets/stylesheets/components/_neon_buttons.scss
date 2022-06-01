@@ -1,0 +1,157 @@
+.neon-button-primary {
+  display: inline-block;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.2s;
+  position: relative;
+  color: $primary-blue;
+}
+
+.neon-button-primary:hover {
+  color: #FFFFFF;
+  background-color: $primary-blue;
+  box-shadow: 0 0 5px $primary-blue, 0 0 20px $primary-blue, 0 0 40px $primary-blue;
+  transition-delay: 0.2s;
+}
+
+.neon-button-primary span {
+  position: absolute;
+  display: block;
+}
+
+.neon-button-primary span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,transparent,$primary-blue)
+}
+
+.neon-button-primary:hover span:nth-child(1) {
+  left: 100%;
+  transition: 0.2s;
+}
+
+.neon-button-primary span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg,transparent,$primary-blue)
+}
+
+.neon-button-primary:hover span:nth-child(3) {
+  right: 100%;
+  transition: 0.2s;
+  transition-delay: 0.1s;
+}
+
+.neon-button-primary span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg,transparent,$primary-blue)
+}
+
+.neon-button-primary:hover span:nth-child(2) {
+  top: 100%;
+  transition: 0.2s;
+  transition-delay: 0.05s;
+}
+
+.neon-button-primary span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg,transparent,$primary-blue)
+}
+
+.neon-button-primary:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 0.2s;
+  transition-delay: 0.15s;
+}
+
+.neon-button-secondary {
+  display: inline-block;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.2s;
+  position: relative;
+  color: $secondary-blue;
+}
+
+.neon-button-secondary:hover {
+  color: #FFFFFF;
+  background-color: $secondary-blue;
+  box-shadow: 0 0 5px $secondary-blue, 0 0 20px $secondary-blue, 0 0 40px $secondary-blue;
+  transition-delay: 0.2s;
+}
+
+.neon-button-secondary span {
+  position: absolute;
+  display: block;
+}
+
+.neon-button-secondary span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,transparent,$secondary-blue)
+}
+
+.neon-button-secondary:hover span:nth-child(1) {
+  left: 100%;
+  transition: 0.2s;
+}
+
+.neon-button-secondary span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg,transparent,$secondary-blue)
+}
+
+.neon-button-secondary:hover span:nth-child(3) {
+  right: 100%;
+  transition: 0.2s;
+  transition-delay: 0.1s;
+}
+
+.neon-button-secondary span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg,transparent,$secondary-blue)
+}
+
+.neon-button-secondary:hover span:nth-child(2) {
+  top: 100%;
+  transition: 0.2s;
+  transition-delay: 0.05s;
+}
+
+.neon-button-secondary span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg,transparent,$secondary-blue)
+}
+
+.neon-button-secondary:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 0.2s;
+  transition-delay: 0.15s;
+}
