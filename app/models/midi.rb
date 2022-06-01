@@ -8,4 +8,5 @@ class Midi < ApplicationRecord
   has_many :midi_categories, dependent: :destroy
   has_many :categories, through: :midi_categories
   has_many :upvotes
+  has_one_attached :midi_file
 end

@@ -8,4 +8,8 @@ class MidisController < ApplicationController
   def show
     # authorize @midis
   end
+
+  def create
+    raise
+  end
 end
