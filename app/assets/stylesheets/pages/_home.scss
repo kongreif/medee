@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   display: grid;
+  grid-gap: 10px;
   height: 100%;
   grid-template-rows: 70vh 100px 50vh 1fr;
   grid-template-columns: 1fr;
