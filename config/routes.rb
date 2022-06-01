@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :midis, only: %i[index show create]
+  resource :profiles, only: %i[edit update]
 
   # get "midis", to: "midis#index", as: :midis
   # get "midi/:id", to: "midis#show", as: :midi
