@@ -64,6 +64,9 @@ gem "pundit"
 # for sake of seeding
 gem "faker"
 
+# pg-search
+gem "pg_search"
+
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
