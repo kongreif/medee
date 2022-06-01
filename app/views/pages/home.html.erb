@@ -1,5 +1,16 @@
+<div>
+  <%# form for midi files %>
+  <%= simple_form_for(@midi) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :key_signature %>
+    <%= f.input :time_signature %>
+    <%= f.input :description %>
+    <%= f.input :midi, as: :file %>
+    <%= f.submit %>
+  <% end %>
+</div>
 <div class="home-container">
-  <div class="banenr">banner</div>
+  <div class="banner">banner</div>
   <div class="search">search</div>
   <div class="rotating-slide">rotating-slide</div>
   <div class="midis-container">midis-container</div>
