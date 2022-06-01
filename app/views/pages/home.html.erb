@@ -1,6 +1,3 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
 <div>
   <%# form for midi files %>
   <%= simple_form_for(@midi) do |f| %>
@@ -12,3 +9,33 @@
     <%= f.submit %>
   <% end %>
 </div>
+<div class="home-container">
+  <div class="banner">banner</div>
+  <div class="search">search</div>
+  <div class="rotating-slide">rotating-slide</div>
+  <div class="midis-container">midis-container</div>
+</div>
+
+
+
+<%# cloudinary image from Jeremy %>
+
+<%# <%= cl_image_tag("cld-sample-4",
+      width: 400, height: 300, crop: :fill) %>
+
+<%# test button %>
+<%# <a class="neon-button-primary" href="/midis">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  Neon button
+</a>
+
+<a class="neon-button-secondary" href="/midis">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  Secondary button
+</a> %>
