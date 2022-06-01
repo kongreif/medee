@@ -13,7 +13,7 @@ class MidisController < ApplicationController
       format.html # do the normal thing, render whole page
       format.text {
         render(
-          partial: "midi_list",
+          partial: "midi_card_list",
           locals: { midis: @midis },
           formats: :html
         )
