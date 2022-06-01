@@ -1,11 +1,11 @@
 <div>
   <%# form for midi files %>
-  <%= simple_form_for(@midi) do |f| %>
+  <%= simple_form_for(@midi, url: midis_path, method: :post) do |f| %>
     <%= f.input :title %>
     <%= f.input :key_signature %>
     <%= f.input :time_signature %>
     <%= f.input :description %>
-    <%= f.input :midi, as: :file %>
+    <%= f.input :midi_file, as: :file %>
     <%= f.submit %>
   <% end %>
 </div>
