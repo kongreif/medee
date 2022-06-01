@@ -3,15 +3,14 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  top: 8.2vh;
+  top: 8vh;
   right: 2px;
   z-index: 1;
   background-color: $black;
   display: none;
 }
-.avatar-dropdown-menu > li:hover{
-  box-shadow: 0 0 10px white;
-
+.avatar-dropdown-menu > li:hover .navbar-link{
+  color: white;
 }
 
 .navbar-sign-in-section:hover .avatar-dropdown-menu{
@@ -26,4 +25,27 @@
   text-align: center;
   vertical-align: middle;
   background-color: $black;
+}
+
+
+
+
+
+.avatar-dropdown-item:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  top: 0;
+  left: 0;
+  background-color: rgb(210, 210, 210);
+  box-shadow: 0 0 20px $primary-blue, 0 0 20px $primary-blue, 0 0 40px $primary-blue;
+  transform-origin: bottom right;
+  transition: transform 0.5s ease-out;
+}
+
+.avatar-dropdown-item:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }

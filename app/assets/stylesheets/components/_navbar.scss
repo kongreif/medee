@@ -16,7 +16,7 @@ header {
 
   .navbar-link {
     text-decoration: none;
-    color: white;
+    color: rgb(169, 169, 169);
   }
 
   display: flex;
@@ -28,32 +28,17 @@ header {
   // border-bottom: 1px solid rgba(255, 255, 255, 0.652);
 }
 
-.navbar-link:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: white;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-
-.navbar-link:hover:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
 .navbar-logo-section {}
 
 .navbar-link-section {
-  li {
-    padding: 20px;
+  li{
+    padding: 20px 10px;
+    margin: 0 20px;
+    position: relative;
   }
 
   li:hover .navbar-link {
+    color: white;
   }
 
   display: flex;
@@ -74,4 +59,27 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+
+// link hover effect
+
+
+.navbar-item:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 10px;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 40px $primary-blue, 0 0 50px $primary-blue, 0 0 40px $primary-blue;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.navbar-item:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
