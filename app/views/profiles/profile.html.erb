@@ -2,10 +2,25 @@
 
 <h3>basic</h3>
 <ul>
-  <li>username</li>
+  <li>username: </li>
+  <%= current_user.username %>
   <li>profilepic</li>
-  <li>follow button</li>
+  <li>follow button  </li>
+
+    <a class="neon-button-primary" href="/midis">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Follow me
+    </a>
+
   <li>my uploaded midis [default]</li>
+
+  <% @midis.each do |midi| %>
+    <p><%= midi.title %></p>
+  <% end %>
+
   <li>my liked midis [alternate list]</li>
 </ul>
 
