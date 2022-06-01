@@ -1,0 +1,12 @@
+.avatar-dropdown-menu {
+  .avatar-dropdown-item {
+  }
+  // display: none;
+  position: absolute;
+  top: 7vh;
+  right: -20px;
+  min-width: 120px;
+  min-height: 100px;
+  z-index: 1;
+  background-color: white;
+}
