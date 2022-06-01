@@ -1,12 +1,32 @@
-.navbar-lewagon {
+@import "avatar_login";
+@import "navbar_dropdown";
+
+// top right bottom left
+// top-bottom right-left
+
+header {
+  li {
+    list-style: none;
+  }
+
+  display: flex;
   justify-content: space-between;
-  background: white;
+  align-items: center;
+  height: 8vh;
+  padding: 0 20px;
+  background-color: $black;
+  // border-bottom: 1px solid rgba(255, 255, 255, 0.652);
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.navbar-logo-section {}
+
+.navbar-link-section {
+  display: flex;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-sign-in-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  // height: 100%;
 }
