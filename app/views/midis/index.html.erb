@@ -1,5 +1,28 @@
 <h1> index page</h1>
 
-<% @midis.each do |midi|%>
-  <p><%= midi.title %></p>
-<% end %>
+<br>
+<br>
+<!-- ask Johannes if there are any problems with styling this search-form please, thank you -->
+<!--SEARCH START -->
+<div data-controller="search-midis">
+  <div>
+    <%= form_with url: midis_path, method: :get, html: {class: "d-flex", data: {search_midis_target: "searchform"}} do |f| %>
+      <%= f.text_field :query,
+        class: "form-control",
+        placeholder: "Type a midi title",
+        value: params[:query],
+        data: {
+          search_midis_target: "searchinput",
+          action: "keyup->search-midis#update"
+        }
+      %>
+      <%= f.submit "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+  <!-- ask Johannes if there are any problems with styling this midi_list please, thank you -->
+  <div>
+  <%= render "midi_list", midis: @midis %>
+  </div>
+</div>
+<!--SEARCH END -->
