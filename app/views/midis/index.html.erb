@@ -19,8 +19,10 @@
       <%= f.submit "Search", class: "btn btn-primary" %>
     <% end %>
   </div>
+
+  <!-- ask Johannes if there are any problems with styling this midi_list please, thank you -->
+  <div>
+  <%= render "midi_list", midis: @midis %>
+  </div>
 </div>
 <!--SEARCH END -->
-
-<!-- ask Johannes if there are any problems with styling this midi_list please, thank you -->
-<%= render "midi_list", midis: @midis %>
