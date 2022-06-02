@@ -155,3 +155,22 @@
   transition: 0.2s;
   transition-delay: 0.15s;
 }
+
+.neon-button-search {
+  display: inline-block;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.2s;
+  position: relative;
+  color: $primary-blue;
+}
+
+.neon-button-search:hover {
+  color: #FFFFFF;
+  background-color: $primary-blue;
+  box-shadow: 0 0 5px $primary-blue, 0 0 20px $primary-blue, 0 0 40px $primary-blue;
+  transition-delay: 0.2s;
+}

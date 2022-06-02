@@ -5,23 +5,23 @@
   display: grid;
   grid-gap: 10px;
   height: 100%;
-  grid-template-rows: 70vh 100px 50vh 1fr;
+  grid-template-rows: 75vh 130px 50vh 1fr;
   grid-template-columns: 1fr;
   grid-template-areas:'banner'
                       'search'
                       'rotating-slide'
                       'midis-container';
   font-family: $body-font;
-  font-size: 30px;
+  font-size: 15px;
 }
 
 .home-container > div {
-    background-color: rgb(26, 147, 147);
+    // background-color: blue;
     // padding: 20px;
-    border: 1px solid black;
-    display: grid;
-    justify-content: center;
-    align-items: center;
+    // border: 1px solid rgb(255, 255, 255);
+    // display: grid;
+    // justify-content: center;
+    // align-items: center;
 }
 
 .banner {
