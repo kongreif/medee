@@ -10,7 +10,8 @@ class MidisController < ApplicationController
   end
 
   def show
-    # authorize @midis
+    @midi = Midi.find(params[:id])
+    authorize @midi
   end
 
   def create
