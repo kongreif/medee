@@ -1,0 +1,6 @@
+<div class="midi-card-details-bottom-tags">
+  <% midi.moods.each_with_index do |mood, index| %>
+    <% break if index >= 3 %>
+    <div class="card-tag"><%= mood.name %></div>
+  <% end %>
+</div>
