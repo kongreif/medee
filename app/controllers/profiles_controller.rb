@@ -5,6 +5,9 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = Profile.find(params[:id])
+    @user = @profile.user
+    @midis = @user.midis
+    # raise
   end
 
   def edit
