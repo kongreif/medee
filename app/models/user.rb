@@ -9,4 +9,15 @@ class User < ApplicationRecord
   has_many :upvotes
 
   has_one_attached :photo
+
+  has_one :profile, dependent: :destroy
+
+  after_create :create_profile
+
+  private
+
+  def create_profile
+    # Profile.create(user: self)
+    self.create_profile!
+  end
 end

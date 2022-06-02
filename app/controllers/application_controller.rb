@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
   include Pundit::Authorization
 
   # Pundit: white-list approach
-  after_action :verify_authorized, except: %i[index profile edit new], unless: :skip_pundit?
+
+  after_action :verify_authorized, except: %i[index profile show edit update new], unless: :skip_pundit?
   after_action :verify_policy_scoped, only: %i[index profile], unless: :skip_pundit?
 
   # Uncomment when you *really understand* Pundit!
