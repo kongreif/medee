@@ -17,6 +17,10 @@ export default class extends Controller {
     .then(response => response.text())
     .then((data) => {
       this.midilistTarget.outerHTML = data
+      // console.log(data)
     })
   }
 }
+
+
+// midis/query=
