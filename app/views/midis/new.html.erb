@@ -1,12 +1,11 @@
 <div>
-  <%# form for midi files %>
   <%= simple_form_for(@midi) do |f| %>
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :key_signature %>
     <%= f.input :time_signature %>
     <%= f.input :category, collection: Midi.categories.map {|key, value| [key.titleize, Midi.categories.key(value)]} %>
-    <%#= f.input :moods, collection: Moods.all, input_html: {} %> <%# you should add multi moods into your file  %>
+    <%= f.input :moods, collection: Mood.all, as: :check_boxes %>
     <%= f.input :midi, as: :file %>
     <%= f.submit %>
   <% end %>

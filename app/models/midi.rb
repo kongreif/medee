@@ -1,4 +1,5 @@
 class Midi < ApplicationRecord
+  serialize :midi, Array
   belongs_to :user
   validates :title, presence: true
   validates :key_signature, presence: true

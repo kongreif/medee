@@ -16,6 +16,7 @@ class MidisController < ApplicationController
 
   def new
     @midi = Midi.new
+    
   end
 
   def create
