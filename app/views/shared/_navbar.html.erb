@@ -17,6 +17,9 @@
     <li class="navbar-item">
       <%= link_to "medee", midis_path, class: "navbar-link" %>
     </li>
+    <li class="navbar-item">
+      <%= link_to "upload", new_midi_path , class: "navbar-link" %>
+    </li>
   </ul>
 <!-- navbar links end -->
 
@@ -26,7 +29,7 @@
       <li class="username"> USERNAME</li>
       <li class="user-avatar"><%= image_tag "bulma.png", class: "avatar-picture" %></li>
       <div class="avatar-dropdown-menu">
-        <li class="avatar-dropdown-item"><%= link_to "Upload Photo", edit_profiles_path, class: "navbar-link" %></li>
+        <li class="avatar-dropdown-item"><%= link_to "Upload Photo", edit_profile_path(current_user), class: "navbar-link" %></li>
         <li class="avatar-dropdown-item"><%= link_to "My profile", "#", class: "navbar-link" %></li>
         <li class="avatar-dropdown-item"><%= link_to "Log out",  destroy_user_session_path, data: {turbo_method: :delete}, class: "navbar-link" %>
       </div>

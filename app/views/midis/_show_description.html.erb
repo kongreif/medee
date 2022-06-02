@@ -1,0 +1,14 @@
+<div class="show-description">
+  <div class="show-description-artist">
+  <% if midi.user.photo.attached? %>
+    <%= cl_image_path midi.user.photo.key, height: 150, crop: :fill %>
+  <% else %>
+    <%= image_tag "profile-picture-placeholder.png", height: 150, crop: :fill %>
+  <% end %>
+    <%# TODO insert user profile link %>
+    <p><%= midi.user.username %></p>
+  </div>
+  <div class="show-description-text">
+    <%= midi.description %>
+  </div>
+</div>

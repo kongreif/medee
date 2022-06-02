@@ -1,1 +1,9 @@
-<h1>this is show</h1>
+<div class="container">
+  <%# Midi player on top %>
+  <%= render "show_midi", midi: @midi %>
+
+  <%# Description and artist info %>
+  <%= render "show_description", midi: @midi %>
+
+  <%# TODO: Comment section %>
+</div>
