@@ -13,14 +13,4 @@ Rails.application.routes.draw do
 
   # get "midis", to: "midis#index", as: :midis
   # get "midi/:id", to: "midis#show", as: :midi
-
-  # profiles routes
-  # get 'profiles/show'
-  # get 'profiles/create'
-  # get 'profiles/destroy'
-  # get 'profile', to: 'profiles#profile', as: 'profile'
-
-
-
-  # get 'profile/:id', to: "profiles#show", as: profile
 end
