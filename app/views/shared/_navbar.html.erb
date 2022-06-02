@@ -24,7 +24,7 @@
 <!-- sign-in start -->
   <ul class="navbar-sign-in-section">
     <% if user_signed_in? %>
-      <li class="username"> username</li>
+      <li class="username"> <%= current_user.username %></li>
       <li class="user-avatar"><%= image_tag "bulma.png", class: "avatar-picture" %></li>
       <div class="avatar-dropdown-menu">
         <li class="avatar-dropdown-item"><%= link_to "Upload Photo", edit_profile_path(current_user), class: "navbar-link" %></li>
