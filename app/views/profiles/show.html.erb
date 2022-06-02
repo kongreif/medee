@@ -7,6 +7,6 @@
 <h4><%= @profile.id %></h4>
 
 <h1>USER MIDIS</h1>
-<% @user.midis do |midi| %>
-  <% midi.title %>
+<% @midis.each do |midi| %>
+  <h4><%= midi.title %></h4>
 <% end %>
