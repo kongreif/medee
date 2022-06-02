@@ -9,7 +9,7 @@
     <div class="midi-card-details-artist"><%= link_to midi.user.username, midi_path(midi) %></div>
     <div class="midi-card-details-row-2">
       <div class="midi-card-details-track"><%= link_to midi.title, midi_path(midi) %></div>
-      <div><%= midi.categories[0].name unless midi.categories.empty? %></div>
+      <div><%= midi.category %></div>
     </div>
     <div class="midi-card-details-image">Image</div>
     <div class="midi-card-details-bottom">
