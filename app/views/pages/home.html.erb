@@ -33,18 +33,3 @@
 
 <%# image Upload from Jeremy %>
 
-<%
-=begin %>
-<div>
-  <%# form for midi files %>
-  <%= simple_form_for(@midi) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :key_signature %>
-    <%= f.input :time_signature %>
-    <%= f.input :description %>
-    <%= f.input :midi, as: :file %>
-    <%= f.submit %>
-  <% end %>
-</div>
-<%
-=end %>

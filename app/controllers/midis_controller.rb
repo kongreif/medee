@@ -14,6 +14,11 @@ class MidisController < ApplicationController
     authorize @midi
   end
 
+  def new
+    @midi = Midi.new
+    
+  end
+
   def create
     @midi = Midi.new(midi_params)
     @midi.user = current_user
