@@ -11,9 +11,9 @@
   width: 300px;
 }
 
-.medee > h1{
-  font-size: 120px;
-}
+// .medee > h1{
+//   font-size: 120px;
+// }
 
 .banner-logo {
   position: absolute;
@@ -43,4 +43,9 @@
   100%{
     background-position: 0 0;
   }
+}
+
+.glow-background::after{
+  filter: blur(40px);
+  opacity: 0.99;
 }
