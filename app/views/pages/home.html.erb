@@ -9,7 +9,39 @@
       medee
     </div>
   </div>
-  <div class="search">search</div>
+
+  <div class="search">
+      <%= form_with url: midis_path, method: :get, html: {class: "d-flex", data: {search_midis_target: "searchform"}} do |f| %>
+        <%= f.text_field :query,
+          class: "form-control",
+          placeholder: "Type a midi title",
+          value: params[:query],
+          data: {
+            search_midis_target: "searchinput",
+            action: "keyup->search-midis#update"
+          }
+        %>
+        <%= f.submit "Search", class: "btn btn-primary" %>
+      <% end %>
+      <div class="button-burrito">
+        <a class="neon-button-primary" href="/midis">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          search
+        </a>
+        <h5> or</h5>
+        <a class="neon-button-secondary" href="/midis">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          upload
+        </a>
+      </div>
+  </div>
+
   <div class="rotating-slide">rotating-slide</div>
   <div class="midis-container">midis-container</div>
 </div>
