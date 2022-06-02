@@ -1,0 +1,49 @@
+.show-midi {
+  display: flex;
+  background-image: linear-gradient(#000000, #383838);
+  padding: 0px 40px 20px 0px;
+}
+
+.show-midi-play {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 40px 0px 40px;
+}
+
+.show-midi-info {
+  flex-grow: 1;
+}
+
+.show-midi-info h1 {
+  padding-top: 40px;
+}
+
+.show-midi-info p {
+  text-align: right;
+}
+
+.show-midi-info-image {
+  background-color: grey;
+  height: 200px;
+}
+
+.show-midi-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 5px;
+  align-items: center;
+}
+
+.show-midi-bootom-tags {
+  display: flex;
+}
+
+.show-description {
+  display: flex;
+  padding-top: 20px;
+  gap: 20px;
+}
+
+.show-description-artist p {
+  text-align: center;
+}
