@@ -1,0 +1,15 @@
+<div>
+  <%# form for midi files %>
+  <%= simple_form_for(@midi) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :key_signature %>
+    <%= f.input :time_signature %>
+    <%= f.input :category, collection: Category.all, input_html: {multiple: true}, include_hidden: false %>
+    <%= f.input :moods %> <%# you should add multi moods into your file  %>
+    <%= f.input :midi, as: :file %>
+    <%= f.submit %>
+  <% end %>
+</div>
+
+#category using enum
