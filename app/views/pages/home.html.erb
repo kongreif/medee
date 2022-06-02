@@ -1,12 +1,12 @@
 <div class="home-container">
   <div class="banner">
-    <div class="logo-medee-burrito">
-      <div class="glow-background">
-        <%= image_tag "navbar-logo.png", class: "banner-logo" %>
+    <div class="banner-logo-burrito">
+      <div class="banner-glow-background">
       </div>
-      <%# <div class="medee">
-        <h1>medee</h1>
-      </div> %>
+      <%= image_tag "banner-logo.png", class: "banner-logo" %>
+    </div>
+    <div class="medee">
+      medee
     </div>
   </div>
   <div class="search">search</div>
@@ -16,6 +16,8 @@
 
 
 
+<%
+=begin %>
 
 <%# test button %>
 <a class="neon-button-primary" href="/midis">
@@ -42,8 +44,6 @@
 
 <%# image Upload from Jeremy %>
 
-<%
-=begin %>
 <div>
   <%# form for midi files %>
   <%= simple_form_for(@midi) do |f| %>
