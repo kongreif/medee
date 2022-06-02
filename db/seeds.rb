@@ -10,6 +10,8 @@ require 'faker'
 
 puts "User.destroy_all"
 User.destroy_all
+puts "Profile.destroy_all"
+Profile.destroy_all
 
 # creates moods based on MOODS array
 MOODS = ["uplifting", "happy", "dramatic", "sad", "melancholic", "cinematic", "aggressive", "chill", ""]

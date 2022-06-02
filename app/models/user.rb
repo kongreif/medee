@@ -18,6 +18,7 @@ class User < ApplicationRecord
 
   def create_profile
     # Profile.create(user: self)
-    self.create_profile!
+    # self.create_profile!
+    create_profile!
   end
 end

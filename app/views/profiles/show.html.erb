@@ -1,1 +1,12 @@
-<h1>SHOW PAGE</h1>
+<h1>PROFILE SHOW PAGE</h1>
+<h3>username:</h3>
+<h4><%= @profile.user.username %></h4>
+<h3>user ID:</h3>
+<h4><%= @profile.user.id %></h4>
+<h3>profile ID:</h3>
+<h4><%= @profile.id %></h4>
+
+<h1>USER MIDIS</h1>
+<% @midis.each do |midi| %>
+  <h4><%= midi.title %></h4>
+<% end %>
