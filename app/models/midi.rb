@@ -13,6 +13,12 @@ class Midi < ApplicationRecord
   include PgSearch::Model
   pg_search_scope :search_by_title, against: [:title], using: { tsearch: { prefix: true } }
 
-  CATEGORIES = ['lead', 'chords', 'pads', 'bassline', 'drums', 'plucked']
-  enum status: categories
+  enum category: {
+    lead: 1,
+    chords: 2,
+    pads: 3,
+    bassline: 4,
+    drums: 5,
+    plucked: 6
+  }
 end

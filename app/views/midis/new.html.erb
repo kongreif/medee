@@ -5,11 +5,9 @@
     <%= f.input :description %>
     <%= f.input :key_signature %>
     <%= f.input :time_signature %>
-    <%= f.input :category, collection: Category.all, input_html: {multiple: true}, include_hidden: false %>
-    <%= f.input :moods %> <%# you should add multi moods into your file  %>
+    <%= f.input :category, collection: Midi.categories.map {|key, value| [key.titleize, Midi.categories.key(value)]} %>
+    <%#= f.input :moods, collection: Moods.all, input_html: {} %> <%# you should add multi moods into your file  %>
     <%= f.input :midi, as: :file %>
     <%= f.submit %>
   <% end %>
 </div>
-
-#category using enum
