@@ -16,14 +16,14 @@ class MidisController < ApplicationController
 
   def new
     @midi = Midi.new
-    
   end
 
   def create
     @midi = Midi.new(midi_params)
+    authorize @midi
     @midi.user = current_user
     @midi.save!
-    redirect_to root_path
+    redirect_to midi_path(@midi)
   end
 
   private
