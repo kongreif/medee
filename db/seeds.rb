@@ -11,19 +11,6 @@ require 'faker'
 puts "User.destroy_all"
 User.destroy_all
 
-# creates categories based on CATEGORIES array
-CATEGORIES = ["lead", "chords", "pads", "bassline", "drum pattern", "pluck", ""]
-Category.destroy_all
-CATEGORIES.each do |category|
-  puts "creating a category:"
-  cat = Category.create(
-    {
-      name: category
-    }
-  )
-  puts "created #{cat.name} - Category"
-end
-
 # creates moods based on MOODS array
 MOODS = ["uplifting", "happy", "dramatic", "sad", "melancholic", "cinematic", "aggressive", "chill", ""]
 Mood.destroy_all
@@ -85,18 +72,9 @@ end
     i += 1
   end
 
-  # creating between 0 and 3 categories for a single midi
-  arr_category = Category.all.sample(4)
-  y = 0
-  rand(0..3).times do
-    MidiCategory.create(
-      {
-        midi: midi,
-        category: arr_category[y]
-      }
-    )
-    y += 1
-  end
+  # adding a category to a MIDI
+  midi.category = rand(1..6)
+  midi.save
 
   puts "created #{midi.title}"
 end
