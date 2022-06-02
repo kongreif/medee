@@ -4,7 +4,7 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-
+    # pundit authorization needed
   end
 
   def update
