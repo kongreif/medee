@@ -1,0 +1,25 @@
+<div class="show-description">
+  <div class="show-description-artist">
+  <% if midi.user.photo.attached? %>
+    <%= cl_image_path midi.user.photo.key, height: 150, crop: :fill %>
+  <% else %>
+    <%= image_tag "profile-picture-placeholder", height: 150, crop: :fill %>
+  <% end %>
+    <%# TODO insert user profile link %>
+    <p><%= midi.user.username %></p>
+  </div>
+  <div class="show-description-text">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere aperiam illum sequi commodi dolor animi mollitia ab.
+    Repudiandae distinctio doloribus, inventore quae ab explicabo nemo, quos illum officiis debitis non!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere aperiam illum sequi commodi dolor animi mollitia ab.
+    Repudiandae distinctio doloribus, inventore quae ab explicabo nemo, quos illum officiis debitis non!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere aperiam illum sequi commodi dolor animi mollitia ab.
+    Repudiandae distinctio doloribus, inventore quae ab explicabo nemo, quos illum officiis debitis non!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere aperiam illum sequi commodi dolor animi mollitia ab.
+    Repudiandae distinctio doloribus, inventore quae ab explicabo nemo, quos illum officiis debitis non!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere aperiam illum sequi commodi dolor animi mollitia ab.
+    Repudiandae distinctio doloribus, inventore quae ab explicabo nemo, quos illum officiis debitis non!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere aperiam illum sequi commodi dolor animi mollitia ab.
+    Repudiandae distinctio doloribus, inventore quae ab explicabo nemo, quos illum officiis debitis non!
+  </div>
+</div>
