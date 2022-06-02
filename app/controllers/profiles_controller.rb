@@ -7,6 +7,10 @@ class ProfilesController < ApplicationController
     # pundit authorization needed
   end
 
+  # def edit_profile_photo
+
+  # end
+
   def update
     current_user.update(profile_params)
     redirect_to edit_profiles_path

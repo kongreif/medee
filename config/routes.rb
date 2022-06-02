@@ -7,14 +7,13 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :midis, only: %i[index show create]
-  resource :profiles, only: %i[edit update]
+  resources :profiles, only: %i[update edit]
 
   # get "midis", to: "midis#index", as: :midis
   # get "midi/:id", to: "midis#show", as: :midi
 
   # profiles routes
-  # get 'profiles/show'
-  # get 'profiles/create'
-  # get 'profiles/destroy'
+  # TODO: profile/:id
   get 'profile', to: 'profiles#profile', as: 'profile'
+  # get 'profiles/edit_profile_photo', to: 'profiles#edit_profile_photo', as: 'edit_profile_photo'
 end
