@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
   include Pundit::Authorization
 
   # Pundit: white-list approach
-  after_action :verify_authorized, except: :index, unless: :skip_pundit?
-  after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
+  after_action :verify_authorized, except: %i[index profile], unless: :skip_pundit?
+  after_action :verify_policy_scoped, only: %i[index profile], unless: :skip_pundit?
 
   # Uncomment when you *really understand* Pundit!
   # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
@@ -16,11 +16,12 @@ class ApplicationController < ActionController::Base
   # end
 
   def configure_permitted_parameters
+
     # For additional fields in app/views/devise/registrations/new.html.erb
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :photo])
 
     # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: [:username])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :photo])
   end
 
   private

@@ -24,4 +24,15 @@ class MidisController < ApplicationController
   def show
     # authorize @midis
   end
+
+  def create
+    @midi = Midi.new(midi_params)
+    @midi.user = current_user
+    @midi.save!
+    redirect_to root_path
+  end
+
+  def midi_params
+    params.require(:midi).permit(:title, :key_signature, :time_signature, :description, :midi_file)
+  end
 end

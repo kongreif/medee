@@ -1,0 +1,63 @@
+// Font-sizes
+.title-fs { font-size: 28; }
+.subtitle-fs { font-size: 24; }
+.paragraph-fs { font-size: 16; }
+
+.profile-card {
+  background-color: $light-gray ;
+  color: $gray;
+  max-width: 380px;
+  max-height: 540px;
+  margin: auto;
+  padding: 10px 10px 10px 10px;
+}
+
+.profile-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  font-size: 24px;
+  border-bottom: 2px solid $medium-gray;
+}
+
+.profile-stats-uploads {
+  text-align: center;
+}
+
+.profile-stats-upvotes {
+  text-align: center;
+}
+
+.stat-name {
+  color: $medium-gray;
+  margin-bottom: 1px;
+}
+
+.stat-value {
+  margin-bottom: 10px;
+}
+
+.artist-details {
+  margin-top: 5px;
+  margin-bottom: 1px;
+  color: $gray;
+  font-size: 24px;
+}
+
+.profile-icons {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  border-top: 2px solid $medium-gray;
+}
+
+.profile-button-position {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
