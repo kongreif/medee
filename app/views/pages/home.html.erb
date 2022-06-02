@@ -1,19 +1,8 @@
-<div>
-  <%# form for midi files %>
-  <%= simple_form_for(@midi) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :key_signature %>
-    <%= f.input :time_signature %>
-    <%= f.input :description %>
-    <%= f.input :midi, as: :file %>
-    <%= f.submit %>
-  <% end %>
-</div>
 <div class="home-container">
   <div class="banner">
     <div class="logo-medee-burrito">
       <div class="glow-background">
-        <%= image_tag "banner-logo.png", class: "banner-logo" %>
+        <%= image_tag "navbar-logo.png", class: "banner-logo" %>
       </div>
       <%# <div class="medee">
         <h1>medee</h1>
@@ -27,13 +16,9 @@
 
 
 
-<%# cloudinary image from Jeremy %>
-
-<%# <%= cl_image_tag("cld-sample-4",
-      width: 400, height: 300, crop: :fill) %>
 
 <%# test button %>
-<%# <a class="neon-button-primary" href="/midis">
+<a class="neon-button-primary" href="/midis">
   <span></span>
   <span></span>
   <span></span>
@@ -47,4 +32,28 @@
   <span></span>
   <span></span>
   Secondary button
-</a> %>
+</a>
+
+
+<%# cloudinary image from Jeremy %>
+
+<%# <%= cl_image_tag("cld-sample-4",
+      width: 400, height: 300, crop: :fill) %>
+
+<%# image Upload from Jeremy %>
+
+<%
+=begin %>
+<div>
+  <%# form for midi files %>
+  <%= simple_form_for(@midi) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :key_signature %>
+    <%= f.input :time_signature %>
+    <%= f.input :description %>
+    <%= f.input :midi, as: :file %>
+    <%= f.submit %>
+  <% end %>
+</div>
+<%
+=end %>
