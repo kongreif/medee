@@ -3,6 +3,10 @@ class ProfilesController < ApplicationController
     @midis = policy_scope(Midi.where(user_id: current_user))
   end
 
+  def show
+    @profile = Profile.find(params[:id])
+  end
+
   def edit
 
   end
