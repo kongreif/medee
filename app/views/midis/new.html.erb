@@ -2,11 +2,11 @@
   <%= simple_form_for(@midi) do |f| %>
     <%= f.input :title %>
     <%= f.input :description %>
-    <%= f.input :key_signature %>
+    <%= f.input :key_signature, collection: Midi.key_signatures.map {|key, value| [key.titleize, Midi.key_signatures.key(value)]} %>
     <%= f.input :time_signature %>
     <%= f.input :category, collection: Midi.categories.map {|key, value| [key.titleize, Midi.categories.key(value)]} %>
     <%= f.input :moods, collection: Mood.all, as: :check_boxes %>
-    <%= f.input :midi, as: :file %>
+    <%= f.input :midi_file, as: :file %>
     <%= f.submit %>
   <% end %>
 </div>
