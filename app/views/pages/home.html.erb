@@ -1,13 +1,41 @@
 <div class="home-container">
-  <div class="banner">banner</div>
-  <div class="search">search</div>
+  <div class="banner">
+    <div class="banner-logo-burrito">
+      <div class="banner-glow-background">
+      </div>
+      <%= image_tag "banner-logo.png", class: "banner-logo" %>
+    </div>
+    <div class="medee">
+      medee
+    </div>
+  </div>
+
+  <div class="search">
+      <div class="button-burrito">
+        <a class="neon-button-primary" href="/midis">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          explore midis
+        </a>
+        <a class="neon-button-secondary" href="/midis/new">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          upload midi
+        </a>
+      </div>
+  </div>
+
   <div class="rotating-slide">rotating-slide</div>
   <div class="midis-container">midis-container</div>
 </div>
 
 
 
-
+<!--
 <%# test button %>
 <a class="neon-button-primary" href="/midis">
   <span></span>
@@ -33,3 +61,15 @@
 
 <%# image Upload from Jeremy %>
 
+<div>
+  <%# form for midi files %>
+  <%= simple_form_for(@midi) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :key_signature %>
+    <%= f.input :time_signature %>
+    <%= f.input :description %>
+    <%= f.input :midi, as: :file %>
+    <%= f.submit %>
+  <% end %>
+</div>
+-->
