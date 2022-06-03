@@ -22,14 +22,17 @@ class MidisController < ApplicationController
     @midi = Midi.new(midi_params)
     authorize @midi
     @midi.user = current_user
-    @midi.save!
-    redirect_to midi_path(@midi)
+    if @midi.save
+      redirect_to midi_path(@midi)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
 
   def midi_params
-    params.require(:midi).permit(:title, :key_signature, :time_signature, :description, :midi_file)
+    params.require(:midi).permit(:title, :key_signature, :time_signature, :description, :midi_file, :category, mood_ids: [])
   end
 
   def dynamic_search_response(str_partial, query_data)
