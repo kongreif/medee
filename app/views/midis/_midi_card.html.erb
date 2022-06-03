@@ -6,7 +6,7 @@
     </svg>
   </div>
   <div class="midi-card-details">
-    <div class="midi-card-details-artist"><%= link_to midi.user.username, profile_path(midi.user) %></div> <!-- TODO: add user profile path -->
+    <div class="midi-card-details-artist"><%= link_to midi.user.username, profile_path(midi.user) %></div>
     <div class="midi-card-details-row-2">
       <div class="midi-card-details-track"><%= link_to midi.title, midi_path(midi) %></div>
       <div><%= midi.category %></div>
