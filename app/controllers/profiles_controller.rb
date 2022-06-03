@@ -16,7 +16,7 @@ class ProfilesController < ApplicationController
 
   def update
     current_user.update(profile_params)
-    redirect_to edit_profiles_path
+    redirect_to edit_profile_path
   end
 
   private
