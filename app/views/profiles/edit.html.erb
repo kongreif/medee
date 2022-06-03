@@ -1,5 +1,7 @@
-<h1>Upload picture</h1>
-<%= simple_form_for current_user, url: profile_path do |f| %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+  <h1>Upload photo</h1>
+<div class="uploader-pic d-flex justify-content-center col-3">
+  <%= simple_form_for current_user, url: profile_path do |f| %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+  <% end %>
+</div>

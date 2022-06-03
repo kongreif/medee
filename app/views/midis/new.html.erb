@@ -1,4 +1,4 @@
-<div>
+<div class="container col-3">
   <%= simple_form_for(@midi) do |f| %>
     <%= f.input :title %>
     <%= f.input :description %>
@@ -6,7 +6,7 @@
     <%= f.input :time_signature %>
     <%= f.input :category, collection: Midi.categories.map {|key, value| [key.titleize, Midi.categories.key(value)]} %>
     <%= f.input :mood_ids, collection: Mood.all, as: :check_boxes, include_hidden: false %>
-    <%= f.input :midi_file, as: :file %>
+    <%= f.input :midi_file, as: :file, class: "uploader"%>
     <%= f.submit %>
   <% end %>
 </div>
