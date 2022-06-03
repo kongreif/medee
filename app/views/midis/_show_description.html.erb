@@ -4,6 +4,7 @@
     <%= cl_image_path midi.user.photo.key, height: 150, crop: :fill %>
   <% else %>
       <%= image_tag "profile-picture-placeholder.png", height: 150, crop: :fill %>
+      <!-- TODO: make image link to user profile -->
   <% end %>
     <p><%= link_to midi.user.username, profile_path(midi.user) %></p>
   </div>
