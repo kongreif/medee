@@ -6,4 +6,6 @@
   <%= render "show_description", midi: @midi %>
 
   <%# TODO: Comment section %>
+  <%= render "show_comments", comments: @midi.comment.all %>
+  <%# what does midi:@midi part do? %>
 </div>
