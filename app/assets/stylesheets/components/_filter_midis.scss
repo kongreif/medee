@@ -1,0 +1,16 @@
+.filter-midis-container {
+  display: flex;
+
+}
+
+.filter {
+  border: 1px solid white;
+}
+
+.midi-card-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 20px;
+  align-items: center;
+}

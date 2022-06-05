@@ -1,5 +1,6 @@
-<br>
-<br>
+<%
+=begin %>
+
 <!-- ask Johannes if there are any problems with styling this search-form please, thank you -->
 <!--SEARCH START -->
 <div data-controller="search-midis">
@@ -24,3 +25,19 @@
   </div>
 </div>
 <!--SEARCH END -->
+
+<%
+=end %>
+
+
+<div class="index-container">
+  <div class="search-bar">search-bar</div>
+  <div class="filter-midis">
+    <div class="filter-midis-container">
+    <div class="filter">This is filter</div>
+    <div class="midi-card-list">
+      <%= render "midi_card_list", midis: @midis %>
+    </div>
+    </div>
+  </div>
+</div>
