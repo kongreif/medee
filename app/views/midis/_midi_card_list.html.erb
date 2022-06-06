@@ -1,7 +1,7 @@
 <div class="midi-card-list" data-search-midis-target="midilist">
   <p class="midi-available-count">
     <% if params[:query].blank? %>
-      <%= pluralize midis.count, "midi" %> availableca
+      <%= pluralize midis.count, "midi" %> available
     <% else %>
       <%= pluralize midis.count, "result" %> for <code><%= params[:query] %></code>
     <% end %>

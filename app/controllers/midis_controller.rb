@@ -11,7 +11,6 @@ class MidisController < ApplicationController
 
   def show
     @midi = Midi.find(params[:id])
-    @comment = Comment.new
     authorize @midi
   end
 
