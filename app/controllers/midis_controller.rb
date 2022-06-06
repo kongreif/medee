@@ -12,6 +12,19 @@ class MidisController < ApplicationController
   def show
     @midi = Midi.find(params[:id])
     authorize @midi
+
+    json = JSON.parse(@midi.midi_json)
+    @chart_data = []
+    # @note_names = json["tracks"][0]["notes"].map { |note| note["name"] }
+
+    json["tracks"][0]["notes"].each { |note| @chart_data << [note["time"], note["midi"]] }
+
+    # @note_times = json["tracks"][0]["notes"].map { |note| note["time"] }
+
+    # json["tracks"][0]["notes"].each do |note|
+    # # note["name"] note["time"]
+    # end
+
   end
 
   def new
