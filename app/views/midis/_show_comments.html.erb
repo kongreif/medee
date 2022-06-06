@@ -1,9 +1,17 @@
 <%# comment input from users (no visitors) goes here %>
 
 <div class="show-comments">
+    <%= simple_form_for [@midi, @comment] do |f| %>
+      <%= f.input :content,
+                  placeholder: 'Add a comment..',
+                  required: true
+                  %>
+      <%= f.submit %>
+    <% end %>
+
   <div class="comments">
-    <%# <% @comments.each do |comment| %> %>
-      <%# <p><%= comment %></p> %>
-    <%# <% end %> %>
+    <% comments.each do |comment| %>
+      <p><%= comment.content %></p>
+    <% end %>
   </div>
 </div>

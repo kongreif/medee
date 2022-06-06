@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  resources :midis, only: %i[index show create new]
+  resources :midis, only: %i[index show create new] do
+    resources :comments, only: %i[create]
+  end
   resources :profiles, only: %i[edit update show]
+
 
   # get "midis", to: "midis#index", as: :midis
   # get "midi/:id", to: "midis#show", as: :midi

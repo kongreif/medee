@@ -1,13 +1,11 @@
 <div class="container">
   <%# Midi player on top %>
-  <%= render "show_midi", midi: @midi %>
+  <%= render "midis/show_midi", midi: @midi %>
 
   <%# Description and artist info %>
-  <%= render "show_description", midi: @midi %>
+  <%= render "midis/show_description", midi: @midi %>
 
   <%# TODO: Comment section %>
-  <%= render "show_comments" %>
+  <%= render "midis/show_comments", comments: @midi.comments%>
   <%# what does midi:@midi part do? %>
 </div>
-
- <%# comments: @midi.comment.all %>
