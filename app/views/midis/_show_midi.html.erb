@@ -18,17 +18,17 @@
 </div>
 
 <% if current_user == @midi.user%>
-<div class="d-flex justify-content-end">
-  <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-    <div class="btn-group" role="group">
-      <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-        Options
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-        <li><%= link_to "Edit", edit_midi_path(@midi), class: "dropdown-item" %></li>
-        <li><%= link_to "Delete", midi_path(@midi), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "dropdown-item" %></li>
-      </ul>
+  <div class="d-flex justify-content-end">
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+      <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          Options
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+          <li><%= link_to "Edit", edit_midi_path(@midi), class: "dropdown-item" %></li>
+          <li><%= link_to "Delete", midi_path(@midi), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "dropdown-item" %></li>
+        </ul>
+      </div>
     </div>
   </div>
- <% end %>
-</div>
+<% end %>
