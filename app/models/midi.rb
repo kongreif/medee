@@ -1,4 +1,5 @@
 class Midi < ApplicationRecord
+  # Cloudinary::Utils.private_download_url self.cloudinary_id, self.format, attachment: true
   serialize :midi, Array
   belongs_to :user
   validates :title, presence: true
