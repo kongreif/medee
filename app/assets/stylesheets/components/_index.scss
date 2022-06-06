@@ -3,11 +3,18 @@
 @import "form_legend_clear";
 
 // medee components
-@import "navbar";
-@import "neon_buttons";
-@import "logo";
-@import "banner";
-@import "search";
+@import "navbar/navbar";
+
+@import "home/logo";
+@import "home/banner";
+@import "home/search";
+
+@import "filter/filter";
+@import "filter/filter_midis";
+
+@import "buttons/neon_buttons";
+
 @import "midi_card";
 @import "bio_profile_card";
 @import "midi_show";
+@import "midi_uploder";

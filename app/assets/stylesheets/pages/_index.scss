@@ -1,3 +1,35 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "footer";
+
+.index-container {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-gap: 10px;
+  height: 100%;
+  grid-template-rows: 100px 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:'search-bar'
+                      'filter-midis';
+  font-family: $body-font;
+  font-size: 15px;
+}
+
+.index-container > div {
+  background-color: rgb(55, 111, 118);
+  padding: 20px;
+  border: 1px solid rgb(255, 255, 255);
+  display: grid;
+  // justify-content: center;
+  // align-items: center;
+}
+
+.search-bar {
+  grid-area: search-bar;
+}
+
+.filter-midis{
+  grid-area: filter-midis;
+  padding: 0;
+}

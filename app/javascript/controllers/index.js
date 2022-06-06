@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import PlayMidiController from "./play_midi_controller.js"
+application.register("play-midi", PlayMidiController)
+
 import SearchMidisController from "./search_midis_controller.js"
 application.register("search-midis", SearchMidisController)

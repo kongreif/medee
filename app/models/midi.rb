@@ -23,4 +23,31 @@ class Midi < ApplicationRecord
     drums: 5,
     plucked: 6
   }
+
+  enum key_signature: {
+    Cmajor: 1,
+    Gmajor: 2,
+    Dmajor: 3,
+    Amajor: 4,
+    Emajor: 5,
+    Bmajor: 6,
+    Fsharpmajor: 7,
+    Dflatmajor: 8,
+    Aflatmajor: 9,
+    Eflatmajor: 10,
+    Bflatmajor: 11,
+    Fmajor: 12,
+    Aminor: 13,
+    Eminor: 14,
+    Bminor: 15,
+    Fsharpminor: 16,
+    Csharpminor: 17,
+    Gsharpminor: 18,
+    Dsharpminor: 19,
+    Bflatminor: 20,
+    Fminor: 21,
+    Cminor: 22,
+    Gminor: 23,
+    Dminor: 24
+  }
 end

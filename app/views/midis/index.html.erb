@@ -1,7 +1,5 @@
-<h1> index page</h1>
-
-<br>
-<br>
+<div class="index-container">
+  <div class="search-bar">
 <!-- ask Johannes if there are any problems with styling this search-form please, thank you -->
 <!--SEARCH START -->
 <div data-controller="search-midis">
@@ -19,10 +17,20 @@
       <%= f.submit "Search", class: "btn btn-primary" %>
     <% end %>
   </div>
-
-  <!-- ask Johannes if there are any problems with styling this midi_list please, thank you -->
-  <div>
-    <%= render "midi_card_list", midis: @midis %>
-  </div>
 </div>
 <!--SEARCH END -->
+  </div>
+  <div class="filter-midis">
+    <div class="filter-midis-container">
+    <div class="filter-wrap">
+      <%# <%= render "filter/filter.html.erb"%>
+      <%= render "filter"%>
+
+    </div>
+  <!-- ask Johannes if there are any problems with styling this midi_list please, thank you -->
+    <div class="midi-card-list-wrap">
+      <%= render "midi_card_list", midis: @midis %>
+    </div>
+    </div>
+  </div>
+</div>
