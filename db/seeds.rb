@@ -54,7 +54,7 @@ end
   midi = Midi.create(
     {
       title: Faker::Music.album,
-      key_signature: Faker::Music.key,
+      key_signature: rand(1..24),
       time_signature: TIME_SIGNATURES.sample,
       user_id: User.pluck(:id).sample
     }

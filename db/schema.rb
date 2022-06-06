@@ -61,7 +61,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_03_131653) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category"
-    t.text "moods", default: [], array: true
     t.jsonb "midi_json"
     t.index ["user_id"], name: "index_midis_on_user_id"
   end
