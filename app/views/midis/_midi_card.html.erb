@@ -1,4 +1,4 @@
-<div class="midi-card" data-controller="play-midi" data-play-midi-url-value="<%= cloudinary_url(midi.midi_file.key) if  midi.midi_file.attached? %>">
+<div class="midi-card" data-controller="play-midi" data-play-midi-json-value="<%= midi.midi_json %>" data-play-midi-url-value="<%= cloudinary_url(midi.midi_file.key) if  midi.midi_file.attached? %>">
   <div class="midi-card-play-button" data-action="click->play-midi#playOnClick">
     <svg width="52" height="51" viewBox="0 0 52 51" fill="none" xmlns="http://www.w3.org/2000/svg">
     <ellipse cx="25.6155" cy="25.1302" rx="25.6155" ry="25.1302" fill="#0085FF"/>
@@ -15,7 +15,7 @@
     <div class="midi-card-details-bottom">
       <%= render "midi_card_buttons", midi: midi %>
       <%= render "midi_card_tags", midi: midi %>
-      <div>128 bpm (still hardcoded)</div> <!-- TODO: replace with midi param -->
+      <div>128 bpm</div> <!-- TODO: replace with midi param -->
     </div>
   </div>
 </div>
