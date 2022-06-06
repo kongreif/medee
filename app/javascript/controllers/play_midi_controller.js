@@ -5,7 +5,7 @@ import { Midi } from '@tonejs/midi'
 // Connects to data-controller="play-midi"
 export default class extends Controller {
 
-  static values = {url: String}
+  static values = {url: String, json: Object}
 
   connect() {
   }
@@ -27,7 +27,8 @@ export default class extends Controller {
     const context = new Tone.Context()
     Tone.setContext(context)
     // load a midi file in the browser
-    const midi = await Midi.fromUrl(this.urlValue)
+    // const midi = await Midi.fromUrl(this.urlValue)
+    const midi = this.jsonValue
     //the file name decoded from the first track
     // const name = midi.name
     //get the tracks
