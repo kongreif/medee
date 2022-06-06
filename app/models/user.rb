@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :midis, dependent: :destroy
   has_many :upvotes
+  has_many :comments
 
   has_one_attached :photo
 
