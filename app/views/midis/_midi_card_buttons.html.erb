@@ -1,9 +1,19 @@
 <div class="midi-card-details-bottom-buttons">
   <div class="midi-card-details-bottom-upvotes">
     <div class="heart-active">
-      <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M10.9997 18.25L9.67051 17.0631C4.94967 12.8639 1.83301 10.0944 1.83301 6.6955C1.83301 3.92602 4.05134 1.75 6.87467 1.75C8.46967 1.75 10.0005 2.47834 10.9997 3.62929C11.9988 2.47834 13.5297 1.75 15.1247 1.75C17.948 1.75 20.1663 3.92602 20.1663 6.6955C20.1663 10.0944 17.0497 12.8639 12.3288 17.0721L10.9997 18.25Z" stroke="white" stroke-width="2" stroke-linecap="square"/>
-      </svg>
+    <% if midi.upvotes.where(user: current_user).empty? %>
+      <%= button_to (midi_upvotes_path(midi)), class: "midi-button" do %>
+        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.9997 18.25L9.67051 17.0631C4.94967 12.8639 1.83301 10.0944 1.83301 6.6955C1.83301 3.92602 4.05134 1.75 6.87467 1.75C8.46967 1.75 10.0005 2.47834 10.9997 3.62929C11.9988 2.47834 13.5297 1.75 15.1247 1.75C17.948 1.75 20.1663 3.92602 20.1663 6.6955C20.1663 10.0944 17.0497 12.8639 12.3288 17.0721L10.9997 18.25Z" stroke="white" stroke-width="2" stroke-linecap="square"/>
+        </svg>
+      <% end %>
+    <% else %>
+      <%= button_to (midi_upvote_path(midi, midi.upvotes.where(user: current_user).first)), method: :delete, class: "midi-button" do %>
+        <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.9997 18.25L9.67051 17.0631C4.94967 12.8639 1.83301 10.0944 1.83301 6.6955C1.83301 3.92602 4.05134 1.75 6.87467 1.75C8.46967 1.75 10.0005 2.47834 10.9997 3.62929C11.9988 2.47834 13.5297 1.75 15.1247 1.75C17.948 1.75 20.1663 3.92602 20.1663 6.6955C20.1663 10.0944 17.0497 12.8639 12.3288 17.0721L10.9997 18.25Z" fill="#FF0000" stroke="#FF0000" stroke-width="2" stroke-linecap="square"/>
+        </svg>
+      <% end %>
+    <% end %>
     </div>
     <%= midi.upvotes.count %>
   </div>
