@@ -67,6 +67,9 @@ gem "faker"
 # pg-search
 gem "pg_search"
 
+# chartkick
+gem "chartkick"
+
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
