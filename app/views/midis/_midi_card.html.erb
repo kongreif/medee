@@ -13,9 +13,9 @@
     </div>
     <div class="midi-card-details-image">Image</div>
     <div class="midi-card-details-bottom">
-      <%= render "midi_card_buttons", midi: midi %>
-      <%= render "midi_card_tags", midi: midi %>
-      <div>128 bpm (still hardcoded)</div> <!-- TODO: replace with midi param -->
+      <%= render "/midis/midi_card_buttons", midi: midi %>
+      <%= render "/midis/midi_card_tags", midi: midi %>
+      <div>128 bpm</div> <!-- TODO: replace with midi param -->
     </div>
   </div>
 </div>

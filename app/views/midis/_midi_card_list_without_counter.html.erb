@@ -1,0 +1,7 @@
+<div class="midi-card-list" data-search-midis-target="midilist">
+  <div class="midis">
+    <% midis.each do |midi| %>
+      <%= render "/midis/midi_card", midi: midi %>
+    <% end %>
+  </div>
+</div>
