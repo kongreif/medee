@@ -1,13 +1,15 @@
-<div class="container col-3" data-controller="convert-midi-to-json">
-  <%= simple_form_for(@midi) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :key_signature, collection: Midi.key_signatures.map {|key, value| [key.titleize, Midi.key_signatures.key(value)]} %>
-    <%= f.input :time_signature %>
-    <%= f.input :category, collection: Midi.categories.map {|key, value| [key.titleize, Midi.categories.key(value)]} %>
-    <%= f.input :mood_ids, collection: Mood.all, as: :check_boxes, include_hidden: false %>
-    <%= f.input :midi_file, as: :file, input_html: { data: {convert_midi_to_json_target: "input", action: "change->convert-midi-to-json#toJson"} }, class: "uploader"%>
-    <%= f.input :midi_json, as: :hidden, input_html: { data: { convert_midi_to_json_target: "result" } } %>
-    <%= f.submit %>
-  <% end %>
+<div class="container col-3">
+  <div class="upload-form" data-controller="convert-midi-to-json">
+    <%= simple_form_for(@midi) do |f| %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :key_signature, collection: Midi.key_signatures.map {|key, value| [key.titleize, Midi.key_signatures.key(value)]} %>
+      <%= f.input :time_signature %>
+      <%= f.input :category, collection: Midi.categories.map {|key, value| [key.titleize, Midi.categories.key(value)]} %>
+      <%= f.input :mood_ids, collection: Mood.all, as: :check_boxes, include_hidden: false %>
+      <%= f.input :midi_file, as: :file, input_html: { data: {convert_midi_to_json_target: "input", action: "change->convert-midi-to-json#toJson"} }, class: "uploader"%>
+      <%= f.input :midi_json, as: :hidden, input_html: { data: { convert_midi_to_json_target: "result" } } %>
+      <%= f.submit %>
+    <% end %>
+  </div>
 </div>
