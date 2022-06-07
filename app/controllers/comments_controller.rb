@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to midi_path(@midi)
     else
-      render midi_path, status: :unprocessable_entity
+      render "midis/show", status: :unprocessable_entity
     end
   end
 
