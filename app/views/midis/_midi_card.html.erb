@@ -15,7 +15,11 @@
     <div class="midi-card-details-bottom">
       <%= render "/midis/midi_card_buttons", midi: midi %>
       <%= render "/midis/midi_card_tags", midi: midi %>
-      <div>128 bpm</div> <!-- TODO: replace with midi param -->
+      <div>
+        <% unless midi.bpm.nil? %>
+          <%= "#{midi.bpm} bpm" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
