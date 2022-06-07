@@ -23,7 +23,7 @@ export default class extends Controller {
     // const synth = new Tone.Synth().toDestination();
     // synth.triggerAttackRelease("C4", "8n");
     var bool = this.playButtonTarget.classList.value == "hide"
-    console.log(bool)
+    // console.log(bool)
     if (this.playButtonTarget.classList.value == "hide") {
       // music must play here
       console.log("PLAY MUSIC");
@@ -34,7 +34,7 @@ export default class extends Controller {
       //music must pause here
       console.log("PAUSE MUSIC");
       // await Tone.getConstext().dispose();
-      // this.stopMidiFile();
+      this.stopMidiFile();
     }
 
     // const dist = new Tone.Distortion(0.8).toDestination();
@@ -76,6 +76,7 @@ export default class extends Controller {
 
   stopMidiFile = async () => {
     console.log("stopMidifile() :: ")
-    Tone.getContext().dispose;
+    // Tone.getContext().dispose;
+    Tone.Transport.pause();
   }
 }
