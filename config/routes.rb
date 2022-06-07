@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :midis, only: %i[index show create new] do
     resources :comments, only: %i[create]
+  resources :midis do
     resources :upvotes, only: %i[create destroy]
   end
   resources :profiles, only: %i[edit update show]

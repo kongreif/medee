@@ -7,7 +7,7 @@
   </div>
   <div class="show-midi-info">
     <h1><%= midi.title %></h1>
-    <p><%= midi.category %></p>
+      <p><%= midi.category %></p>
     <div class="show-midi-info-image">Image</div>
     <div class="show-midi-bottom">
       <%= render "midis/midi_card_buttons", midi: midi %>
@@ -16,3 +16,17 @@
     </div>
   </div>
 </div>
+
+<% if current_user == @midi.user%>
+  <div class="d-flex justify-content-end">
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+      <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Options</button>
+          <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+            <li><%= link_to "Edit", edit_midi_path(@midi), class: "dropdown-item" %></li>
+            <li><%= link_to "Delete", midi_path(@midi), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "dropdown-item" %></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+<% end %>
