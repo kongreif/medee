@@ -1,16 +1,16 @@
 .filter-midis-container {
   display: flex;
-
 }
 
 .midi-available-count {
   font-size: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .midi-card-list {
   width: 100%;
   max-width: 900px;
+  // padding-top: 50px;
 }
 
 .midi-card-list-wrap {

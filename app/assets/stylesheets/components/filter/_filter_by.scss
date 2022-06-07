@@ -1,11 +1,45 @@
 
 .filter-by {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
   button{
     height: 30px;
     border: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    background-color: transparent;
+    position: absolute;
+    font-weight: bold;
+    color: rgb(169, 169, 169);
+
   }
+
+  .filter-by-title {
+    position: absolute;
+    margin: 0;
+    bottom: 60px;
+  }
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+
+
+#filter-close-button{
+  top: 10px;
+  left: 20px;
+}
+
+#filter-close-button:hover{
+  color: $black;
+}
+
+#filter-save-button{
+  top: 10px;
+  right: 20px;
+}
+
+#filter-save-button:hover{
+  color: $black;
 }

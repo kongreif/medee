@@ -9,31 +9,31 @@
 //   text-decoration: none;
 // }
 
-.filter-botton{
-  margin-left: 30px;
-  display: inline-block;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  text-decoration: none;
-  position: relative;
-  padding: 10px 5px 10px 10px;
-  width: 130px;
-  overflow: hidden;
-  transition: 0.1s;
-  color: $secondary-blue;
-  background-color: transparent;
-  border: none;
-  border-radius: 10%;
-  text-align: center;
-  // border-bottom-right-radius:10%;
-  // border-top-left-radius:10%;
+// .filter-botton{
+//   margin-left: 30px;
+//   display: inline-block;
+//   text-transform: uppercase;
+//   letter-spacing: 4px;
+//   text-decoration: none;
+//   position: relative;
+//   padding: 10px 5px 10px 10px;
+//   width: 130px;
+//   overflow: hidden;
+//   transition: 0.1s;
+//   color: $secondary-blue;
+//   background-color: transparent;
+//   border: none;
+//   border-radius: 10%;
+//   text-align: center;
+//   // border-bottom-right-radius:10%;
+//   // border-top-left-radius:10%;
 
-  // text-align: center;
-}
+//   // text-align: center;
+// }
 
-.filter-botton:hover {
-  color: #FFFFFF;
-  background-color: $secondary-blue;
-  box-shadow: 0 0 5px $secondary-blue, 0 0 20px $secondary-blue, 0 0 40px $secondary-blue;
-  transition-delay: 0.2s;
-}
+// .filter-botton:hover {
+//   color: #FFFFFF;
+//   background-color: $secondary-blue;
+//   box-shadow: 0 0 5px $secondary-blue, 0 0 20px $secondary-blue, 0 0 40px $secondary-blue;
+//   transition-delay: 0.2s;
+// }

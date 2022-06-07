@@ -8,7 +8,7 @@
   display: grid;
   grid-gap: 10px;
   height: 100%;
-  grid-template-rows: 150px 1fr;
+  grid-template-rows: 100px 1fr;
   grid-template-columns: 1fr;
   grid-template-areas:'search-bar'
                       'filter-midis';
@@ -28,6 +28,7 @@
 .filter-midis{
   grid-area: filter-midis;
   padding: 0;
-  border: 1px solid rgb(255, 255, 255);
-  background-color: rgb(55, 111, 118);
+  // padding-top: 100px;
+  // border: 1px solid rgb(255, 255, 255);
+  // background-color: rgb(55, 111, 118);
 }
