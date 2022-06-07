@@ -2,4 +2,4 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
-//= require rails-social-share-button
+import "chartkick/chart.js"

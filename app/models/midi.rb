@@ -4,12 +4,13 @@ class Midi < ApplicationRecord
   validates :title, presence: true
   validates :key_signature, presence: true
   validates :time_signature, presence: true
+  validates :midi_file, presence: true
   has_many :midi_moods, dependent: :destroy
   has_many :moods, through: :midi_moods
   has_many :upvotes
   has_one_attached :midi_file
   has_many :comments
-  
+
   include PgSearch::Model
   pg_search_scope :search_by_title, against: [:title], using: { tsearch: { prefix: true } }
 
