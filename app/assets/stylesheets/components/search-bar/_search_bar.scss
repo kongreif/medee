@@ -1,7 +1,12 @@
 
-.search-bar-fliter-button-wrap{
-  width: 40%;
+.search-bar{
+  width: 100%;
+  max-width: 800px;
   // margin-top: 100px;
+}
+
+.search-icon{
+  width: 40px;
 }
 
 .form-control{
