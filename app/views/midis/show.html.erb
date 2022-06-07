@@ -7,5 +7,12 @@
 
   <%# TODO: Comment section %>
   <%= render "midis/show_comments", comments: @midi.comments%>
-  <%# what does midi:@midi part do? %>
+
+  <%#=destroy midi with confirmation  %>
+  <%# if current_user == @midi.user%>
+    <%#= link_to "Delete",
+    midi_path(@midi),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %>
+  <%# end %>
 </div>
