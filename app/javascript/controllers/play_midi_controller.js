@@ -20,7 +20,6 @@ export default class extends Controller {
     this.playButtonTarget.classList.toggle("hide");
     this.pauseButtonTarget.classList.toggle("hide");
 
-    await Tone.start();
     // const synth = new Tone.Synth().toDestination();
     // synth.triggerAttackRelease("C4", "8n");
     var bool = this.playButtonTarget.classList.value == "hide"
@@ -28,12 +27,14 @@ export default class extends Controller {
     if (this.playButtonTarget.classList.value == "hide") {
       // music must play here
       console.log("PLAY MUSIC");
+      await Tone.start();
       this.playMidiFile();
     }
-    else if (!this.playButtonTarget.classList.value == "hide") {
+    else if (!(this.playButtonTarget.classList.value == "hide")) {
       //music must pause here
       console.log("PAUSE MUSIC");
-
+      // await Tone.getConstext().dispose();
+      // this.stopMidiFile();
     }
 
     // const dist = new Tone.Distortion(0.8).toDestination();
@@ -45,10 +46,8 @@ export default class extends Controller {
     const context = new Tone.Context()
     Tone.setContext(context)
     // load a midi file in the browser
-    // const midi = await Midi.fromUrl(this.urlValue)
     const midi = this.jsonValue
     //the file name decoded from the first track
-    // const name = midi.name
     //get the tracks
     midi.tracks.forEach(track => {
       //tracks have notes and controlChanges
@@ -73,5 +72,10 @@ export default class extends Controller {
       //the track also has a channel and instrument
       //track.instrument.name
     })
+  }
+
+  stopMidiFile = async () => {
+    console.log("stopMidifile() :: ")
+    Tone.getContext().dispose;
   }
 }
