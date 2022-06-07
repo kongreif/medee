@@ -3,7 +3,7 @@
     <% if @profile.user.photo.attached? %>
       <%= cl_image_tag @profile.user.photo.key, height: 150, width: 150, crop: :thumb, gravity: :faces, radius: :max, quality: :auto, class: "profile-pic" %>
     <% else %>
-        <%= image_tag "profile-picture-placeholder.png", height: 150, crop: :fill %>
+        <%= image_tag "profile-picture-placeholder.png", height: 150, crop: :fill, class: "profile-pic" %>
         <!-- TODO: make image link to user profile -->
     <% end %>
     <span class="profile-photo-edit">
