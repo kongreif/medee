@@ -1,5 +1,29 @@
 <%# comment input from users (no visitors) goes here %>
 
+
+  <div class="comments">
+    <% comments.each do |comment| %>
+      <div class="notification">
+          <div class="show-description-artist">
+            <% if comment.user.photo.attached? %>
+              <%= cl_image_tag comment.user.photo.key, height: 60, width: 60, crop: :thumb, gravity: :faces, radius: :max, quality: :auto, background: "#000000" %>
+            <% else %>
+                <%= image_tag "profile-picture-placeholder.png", height: 60, crop: :fill %>
+                <!-- TODO: make image link to user profile -->
+            <% end %>
+            <p> <%= comment.user.username %></p>
+          </div>
+          <div class="notification-content">
+            <p><small><%= comment.created_at.strftime("%e %b %Y %H:%M:%S%p") %></small></p>
+            <p> <%= comment.content %></p>
+          </div>
+          <div class="notification-actions">
+            <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+            <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+          </div>
+      </div>
+    <% end %>
+  </div>
 <div class="show-comments">
     <%= simple_form_for [@midi, @comment] do |f| %>
       <%= f.input :content,
@@ -8,10 +32,4 @@
                   %>
       <%= f.submit %>
     <% end %>
-
-  <div class="comments">
-    <% comments.each do |comment| %>
-      <p><%= comment.content %> by <%= comment.user.username %></p>
-    <% end %>
-  </div>
 </div>
