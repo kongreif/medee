@@ -1,7 +1,10 @@
-  <h1>Upload photo</h1>
-<div class="uploader-pic d-flex justify-content-center col-3">
-  <%= simple_form_for current_user, url: profile_path do |f| %>
-    <%= f.input :photo, as: :file %>
+<h1>Edit profile</h1>
+<div class="container col-3">
+  <%= simple_form_for(@profile) do |f| %>
+    <%= f.input :bio_description, placeholder: "Insert your bio ..." %>
+    <%= f.input :soundcloud_link, placeholder: "Insert SoundCloud link..." %>
+    <%= f.input :instagram_link, placeholder: "Insert Instagram link..." %>
+    <%= f.input :facebook_link, placeholder: "Insert Facebook link..." %>
     <%= f.submit %>
   <% end %>
 </div>
