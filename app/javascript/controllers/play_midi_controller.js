@@ -6,17 +6,35 @@ import { Midi } from '@tonejs/midi'
 export default class extends Controller {
 
   static values = {url: String, json: Object}
+  static targets = [ "playButton", "pauseButton" ]
 
   connect() {
   }
 
   async playOnClick() {
-    console.log("play midi playOnClick()")
-    await Tone.start()
+    console.log("playOnClick() TOP LINE")
+    // console.log("playButtonTarget.innerHTML:============");
+    // console.log(this.playButtonTarget.innerHTML);
+    // this.playMidiFile();
+
+    this.playButtonTarget.classList.toggle("hide");
+    this.pauseButtonTarget.classList.toggle("hide");
+
+    await Tone.start();
     // const synth = new Tone.Synth().toDestination();
     // synth.triggerAttackRelease("C4", "8n");
+    var bool = this.playButtonTarget.classList.value == "hide"
+    console.log(bool)
+    if (this.playButtonTarget.classList.value == "hide") {
+      // music must play here
+      console.log("PLAY MUSIC");
+      this.playMidiFile();
+    }
+    else if (!this.playButtonTarget.classList.value == "hide") {
+      //music must pause here
+      console.log("PAUSE MUSIC");
 
-    this.playMidiFile();
+    }
 
     // const dist = new Tone.Distortion(0.8).toDestination();
     // const fm = new Tone.FMSynth().connect(dist);
