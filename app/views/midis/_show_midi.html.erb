@@ -10,7 +10,7 @@
       <p><%= midi.category %></p>
     <div class="show-midi-info-image">
       <div style="background-color: white;">
-        <%= scatter_chart(@chart_data, xtitle: "Time", ytitle: "Key", id: "users-chart", width: "800px", height: "200px" ) %>
+        <%= scatter_chart(@chart_data, min: @bottom, max: @top, id: "users-chart", width: :inherit, height: "200px" ) %>
       </div>
     </div>
     <div class="show-midi-bottom">
