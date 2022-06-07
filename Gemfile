@@ -89,3 +89,4 @@ group :test do
 end
 
 gem "cloudinary"
+gem "rails-social-share-button"
