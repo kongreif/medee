@@ -11,7 +11,24 @@
 
   <div class="comments">
     <% comments.each do |comment| %>
-      <p><%= comment.content %> by <%= comment.user.username %></p>
+      <div class="notification">
+          <div class="show-description-artist">
+            <% if comment.user.photo.attached? %>
+              <%= cl_image_tag comment.user.photo.key, height: 80, width: 80, crop: :thumb, gravity: :faces, radius: :max, quality: :auto, background: "#000000" %>
+            <% else %>
+                <%= image_tag "profile-picture-placeholder.png", height: 80, crop: :fill %>
+                <!-- TODO: make image link to user profile -->
+            <% end %>
+          </div>
+        <div class="notification-content">
+          <p><small><%= comment.created_at.strftime("%e %b %Y %H:%M:%S%p") %></small></p>
+          <p> <%= comment.content %></p>
+        </div>
+
+        <div>
+         <p> <%= comment.user.username %></p>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
