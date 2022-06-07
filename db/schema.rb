@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_03_131653) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_07_151610) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -72,6 +72,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_03_131653) do
     t.datetime "updated_at", null: false
     t.integer "category"
     t.jsonb "midi_json"
+    t.integer "bpm"
     t.index ["user_id"], name: "index_midis_on_user_id"
   end
 
@@ -86,6 +87,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_03_131653) do
     t.text "bio_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "soundcloud_link"
+    t.string "instagram_link"
+    t.string "facebook_link"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 

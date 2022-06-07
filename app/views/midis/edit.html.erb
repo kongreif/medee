@@ -4,6 +4,7 @@
     <%= f.input :description %>
     <%= f.input :key_signature, collection: Midi.key_signatures.map {|key, value| [key.titleize, Midi.key_signatures.key(value)]} %>
     <%= f.input :time_signature %>
+    <%= f.input :bpm %>
     <%= f.input :category, collection: Midi.categories.map {|key, value| [key.titleize, Midi.categories.key(value)]} %>
     <%= f.input :mood_ids, collection: Mood.all, as: :check_boxes, include_hidden: false %>
     <!-- <%= f.input :midi_file, as: :file, class: "uploader"%> -->

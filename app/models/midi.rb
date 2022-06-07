@@ -4,6 +4,7 @@ class Midi < ApplicationRecord
   validates :title, presence: true
   validates :key_signature, presence: true
   validates :time_signature, presence: true
+  validates :midi_file, presence: true
   has_many :midi_moods, dependent: :destroy
   has_many :moods, through: :midi_moods
   has_many :upvotes

@@ -16,7 +16,11 @@
     <div class="show-midi-bottom">
       <%= render "midis/midi_card_buttons", midi: midi %>
       <%= render "midis/midi_card_tags", midi: midi %>
-      <p>128 bpm (hardcoded)</p> <!-- TODO remove hardcode -->
+      <p>
+        <% unless midi.bpm.nil? %>
+          <%= "#{midi.bpm} bpm" %>
+        <% end %>
+      </p>
     </div>
   </div>
 </div>

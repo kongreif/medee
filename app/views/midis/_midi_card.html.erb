@@ -42,9 +42,13 @@
       <%= scatter_chart(chart_data, min: bottom, max: top, id: "users-chart", width: :inherit, height: "70px" ) %>
     </div>
     <div class="midi-card-details-bottom">
-      <%= render "midi_card_buttons", midi: midi %>
-      <%= render "midi_card_tags", midi: midi %>
-      <div>128 bpm (still hardcoded)</div> <!-- TODO: replace with midi param -->
+      <%= render "/midis/midi_card_buttons", midi: midi %>
+      <%= render "/midis/midi_card_tags", midi: midi %>
+      <div>
+        <% unless midi.bpm.nil? %>
+          <%= "#{midi.bpm} bpm" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

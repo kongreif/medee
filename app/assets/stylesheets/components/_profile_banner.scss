@@ -1,0 +1,35 @@
+.profile-banner {
+  background-image: url("banner-placeholder.png");
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+}
+
+.profile-banner-container {
+  max-width: 1320px;
+  width: 100%;
+  padding-right: var(--bs-gutter-x,.75rem);
+  padding-left: var(--bs-gutter-x,.75rem);
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.profile-photo-edit {
+  position: absolute;
+  left: 130px;
+  bottom: 110px;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.show-share {
+  position: relative;
+  bottom: 4px;
+}

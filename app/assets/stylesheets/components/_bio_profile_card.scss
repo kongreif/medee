@@ -7,9 +7,16 @@
   background-color: $light-gray ;
   color: $gray;
   max-width: 380px;
+  min-width: 380px;
   max-height: 540px;
   margin: auto;
   padding: 10px 10px 10px 10px;
+  position: relative;
+}
+
+.profile-edit {
+  position: absolute;
+  left: 340px;
 }
 
 .profile-stats {
@@ -18,7 +25,12 @@
   justify-content: space-around;
 
   font-size: 24px;
-  border-bottom: 2px solid $medium-gray;
+  border-bottom: 0.5px solid $medium-gray;
+}
+
+.profile-stats-description {
+  margin-top: 10px;
+  text-align: center;
 }
 
 .profile-stats-uploads {
@@ -43,6 +55,7 @@
   margin-bottom: 1px;
   color: $gray;
   font-size: 24px;
+  padding-top: 5px;
 }
 
 .profile-icons {
@@ -51,7 +64,7 @@
   align-items: center;
   justify-content: space-around;
 
-  border-top: 2px solid $medium-gray;
+  border-top: 0.5px solid $medium-gray;
 }
 
 .profile-button-position {
