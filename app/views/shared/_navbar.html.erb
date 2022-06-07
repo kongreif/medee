@@ -27,7 +27,12 @@
   <ul class="navbar-sign-in-section">
     <% if user_signed_in? %>
       <li class="username"> <%= current_user.username %></li>
-      <li class="user-avatar"><%= image_tag "bulma.png", class: "avatar-picture" %></li>
+      <li class="user-avatar nav-item dropdown">
+        <% if current_user.photo.attached? %>
+          <%= cl_image_tag current_user.photo.key, height: 40, width: 40, crop: :thumb, gravity: :faces, radius: :max, quality: :auto, background: "#000000" %>
+        <% else %>
+            <%= image_tag "profile-picture-placeholder.png", height: 40, crop: :fill %>
+        <% end %></li>
       <div class="avatar-dropdown-menu">
         <li class="avatar-dropdown-item"><%= link_to "Upload Photo", edit_profile_path(current_user), class: "navbar-link" %></li>
         <li class="avatar-dropdown-item"><%= link_to "My profile", profile_path(current_user.profile), class: "navbar-link" %></li>
