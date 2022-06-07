@@ -18,11 +18,13 @@
       cl_image_path(midi.midi_file.key))
       -->
       <%# <%= link_to("Download", cl_download_url(midi.midi_file.key, format: :midi, flag: :attachment)) %>
-      <%# <%= link_to("Download", cloudinary_url(midi.midi_file.key), resource_type: :video) %>
+      <%# <%= link_to("Download", cloudinary_url(midi.midi_file.key), resource_type: :video) %> %>
 
 
       <%# <%= cl_image_path(midi.midi_file.key) %>
-      <%# <%= link_to("Download", cl_zip_download_url(midi.midi_file.key), flag: :attachment) %>
+
+      <!-- ZIP -->
+      <%# <%= link_to("Download", cl_zip_download_url(midi.midi_file.key), flag: :attachment) %> %>
       <%# <%= link_to("Download", Cloudinary::Utils.download_zip_url(public_ids: midi.midi_file.key, resource_type: :video)) %>
 <%#
       Cloudinary::Utils.download_zip_url(
