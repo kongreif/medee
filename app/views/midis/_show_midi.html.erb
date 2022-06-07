@@ -7,18 +7,36 @@
   </div>
   <div class="show-midi-info">
     <h1><%= midi.title %></h1>
-    <p><%= midi.category %></p>
+      <p><%= midi.category %></p>
     <div class="show-midi-info-image">
-      <%# <%= line_chart({"2021-01-01" => 2, "2021-01-02" => 3}) %> %>
+      <div style="background-color: white;">
+        <%= scatter_chart(@chart_data, xtitle: "Time", ytitle: "Key") , width: "800px", height: "500px" %>
+      </div>
     </div>
     <div class="show-midi-bottom">
-      <%= render "midi_card_buttons", midi: midi %>
-      <%= render "midi_card_tags", midi: midi %>
+      <%= render "midis/midi_card_buttons", midi: midi %>
+      <%= render "midis/midi_card_tags", midi: midi %>
       <p>128 bpm (hardcoded)</p> <!-- TODO remove hardcode -->
     </div>
   </div>
 </div>
 
+<% if current_user == @midi.user%>
+  <div class="d-flex justify-content-end">
+    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+      <div class="btn-group" role="group">
+        <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Options</button>
+          <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+            <li><%= link_to "Edit", edit_midi_path(@midi), class: "dropdown-item" %></li>
+            <li><%= link_to "Delete", midi_path(@midi), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "dropdown-item" %></li>
+          </ul>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<!--
 <div style="background-color: white;">
   <%= scatter_chart(@chart_data, xtitle: "Time", ytitle: "Key") %>
 </div>
+-->
