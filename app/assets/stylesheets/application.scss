@@ -19,3 +19,7 @@ body {
 .container {
   background-color: black !important;
 }
+
+// Social media Buttons
+//= require rails-social-share-button
+@import "rails-social-share-button"
