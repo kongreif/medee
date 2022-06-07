@@ -3,7 +3,7 @@
   <%= render "midis/show_midi", midi: @midi %>
 
   <%# Description and artist info %>
-  <%= render "midis/show_description", midi: @midi %>
+  <%= render "midis/show_description", locals: { midi: @midi, chart_data: @chart_data } %>
 
   <%# TODO: Comment section %>
   <%= render "midis/show_comments", comments: @midi.comments%>

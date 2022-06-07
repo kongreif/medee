@@ -8,11 +8,15 @@
   <div class="show-midi-info">
     <h1><%= midi.title %></h1>
       <p><%= midi.category %></p>
-    <div class="show-midi-info-image">Image</div>
+    <div class="show-midi-info-image">
+      <div style="background-color: white;">
+        <%= scatter_chart(@chart_data, min: @bottom, max: @top, id: "users-chart", width: :inherit, height: "200px" ) %>
+      </div>
+    </div>
     <div class="show-midi-bottom">
       <%= render "midis/midi_card_buttons", midi: midi %>
       <%= render "midis/midi_card_tags", midi: midi %>
-      <p>128 bpm (hardcoded)</p>
+      <p>128 bpm (hardcoded)</p> <!-- TODO remove hardcode -->
     </div>
   </div>
 </div>

@@ -13,6 +13,29 @@ class MidisController < ApplicationController
     @midi = Midi.find(params[:id])
     @comment = Comment.new
     authorize @midi
+
+    # Charting / Plotting START
+    # -------------------------------------------------------------------------------------
+    json = JSON.parse(@midi.midi_json)
+    @chart_data = []
+    arr_notes = json["tracks"][0]["notes"]
+    arr_notes.each { |note| @chart_data << [note["time"], note["midi"]] }
+    # find the lowest note
+    lowest_note = 127
+    arr_notes.each do |note|
+      lowest_note = note["midi"] if note["midi"] < lowest_note
+    end
+    # find the highest note
+    highest_note = 1
+    arr_notes.each do |note|
+      highest_note = note["midi"] if note["midi"] > highest_note
+    end
+    # adjusted y-axis spectrum based on hightes/lowest note
+    @bottom = lowest_note - 5
+    @bottom = 0 if @bottom.negative?
+    @top = highest_note + 5
+    # -------------------------------------------------------------------------------------
+    # Charting / Plotting END
   end
 
   def new
