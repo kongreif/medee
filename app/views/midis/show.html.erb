@@ -1,11 +1,12 @@
 <div class="container">
   <%# Midi player on top %>
-  <%= render "show_midi", midi: @midi %>
+  <%= render "midis/show_midi", midi: @midi %>
 
   <%# Description and artist info %>
-  <%= render "show_description", midi: @midi %>
+  <%= render "midis/show_description", midi: @midi %>
 
   <%# TODO: Comment section %>
+  <%= render "midis/show_comments", comments: @midi.comments%>
 
   <%#=destroy midi with confirmation  %>
   <%# if current_user == @midi.user%>
