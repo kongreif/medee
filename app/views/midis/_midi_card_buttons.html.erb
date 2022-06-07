@@ -26,9 +26,28 @@
     </div>
     <%= midi.download_count %>
   </div>
-  <div>
+ <!-- Button trigger modal -->
+<button type="button" class="midi-button" data-bs-toggle="modal" data-bs-target="#exampleModal">
     <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M16.2898 15.0878C15.6079 15.0878 14.9727 15.2861 14.4371 15.627L9.03182 11.8532C9.11859 11.5503 9.16603 11.2307 9.16603 10.9C9.16603 10.5692 9.11859 10.2497 9.03182 9.94678L14.2912 6.27485C14.8555 6.67569 15.5448 6.91218 16.2897 6.91218C18.1984 6.91218 19.7458 5.36482 19.7458 3.45611C19.7458 1.5474 18.1985 0 16.2898 0C14.381 0 12.8337 1.54735 12.8337 3.45606C12.8337 3.70814 12.8614 3.95365 12.9127 4.19038L7.51972 7.95556C6.9933 7.63134 6.37363 7.44392 5.70997 7.44392C3.80126 7.44392 2.25391 8.99127 2.25391 10.9C2.25391 12.8087 3.80121 14.356 5.70997 14.356C6.37358 14.356 6.9933 14.1686 7.51972 13.8444L12.9543 17.6387C12.8761 17.9273 12.8337 18.2306 12.8337 18.5439C12.8337 20.4526 14.381 22 16.2898 22C18.1985 22 19.7458 20.4526 19.7458 18.5439C19.7458 16.6352 18.1985 15.0878 16.2898 15.0878Z" fill="#03D2FF"/>
     </svg>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="color:black">Copy the link</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="color:black">
+        <%="#{request.url}/#{midi.id}" %> <%# code to use for sharing the user profil, need to change 'midi.id' by 'user.id'(jeremy) %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Thank You!</button>
+      </div>
+    </div>
   </div>
+</div>
 </div>
