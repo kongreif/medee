@@ -10,7 +10,7 @@
       <p><%= midi.category %></p>
     <div class="show-midi-info-image">
       <div style="background-color: white;">
-        <%= scatter_chart(@chart_data, xtitle: "Time", ytitle: "Key") , width: "800px", height: "500px" %>
+        <%= scatter_chart(@chart_data, xtitle: "Time", ytitle: "Key", id: "users-chart", width: "800px", height: "200px" ) %>
       </div>
     </div>
     <div class="show-midi-bottom">
@@ -38,5 +38,10 @@
 <!--
 <div style="background-color: white;">
   <%= scatter_chart(@chart_data, xtitle: "Time", ytitle: "Key") %>
+</div>
+-->
+<!--
+<div>
+  <%# <%= scatter_chart chartkick_midi_charts_path %> %>
 </div>
 -->

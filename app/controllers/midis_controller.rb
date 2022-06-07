@@ -14,18 +14,32 @@ class MidisController < ApplicationController
     @comment = Comment.new
     authorize @midi
 
+    # Charting / Plotting
+    # -------------------------------------------------------------------------------------
     json = JSON.parse(@midi.midi_json)
     @chart_data = []
-    # @note_names = json["tracks"][0]["notes"].map { |note| note["name"] }
-
     json["tracks"][0]["notes"].each { |note| @chart_data << [note["time"], note["midi"]] }
 
-    # @note_times = json["tracks"][0]["notes"].map { |note| note["time"] }
+    # find the lowest note
+    lowest_note = 127
+    json["tracks"][0]["notes"].each do |note|
+      lowest_note = note["midi"] if note["midi"] < lowest_note
+    end
 
+    # find the highest note
+    highest_note = 1
+    json["tracks"][0]["notes"].each do |note|
+      highest_note = note["midi"] if note["midi"] > highest_note
+    end
+
+    # adjust highest_note and lowest_note for visablity
+    @bottom = lowest_note - 5
+    @bottom = 0 if @bottom.negative?
+    # @note_times = json["tracks"][0]["notes"].map { |note| note["time"] }
+    # @note_names = json["tracks"][0]["notes"].map { |note| note["name"] }
     # json["tracks"][0]["notes"].each do |note|
     # # note["name"] note["time"]
     # end
-
   end
 
   def new
