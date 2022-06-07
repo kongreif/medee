@@ -29,6 +29,27 @@ class MidisController < ApplicationController
     end
   end
 
+  def edit
+    @midi = Midi.find(params[:id])
+  end
+
+  def update
+    @midi = Midi.find(params[:id])
+    @midi.update(midi_params)
+    if @midi.save
+      redirect_to midi_path(@midi)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @midi = Midi.find(params[:id])
+    authorize @midi
+    @midi.destroy
+    redirect_to midis_path, status: :see_other
+  end
+
   private
 
   def midi_params
