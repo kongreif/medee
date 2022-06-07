@@ -17,6 +17,16 @@
   align-items: center;
 }
 
+.profile-banner-container {
+  position: relative;
+}
+
+.profile-photo-edit {
+  position: absolute;
+  left: 130px;
+  bottom: 110px;
+}
+
 .profile-pic {
   border-radius: 50%;
   margin-right: 20px;
