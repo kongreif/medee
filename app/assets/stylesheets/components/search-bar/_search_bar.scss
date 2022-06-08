@@ -9,14 +9,14 @@
   width: 40px;
 }
 
-.form-control{
+.search-bar .form-control{
   background-color: transparent;
   color: white;
   border-radius: 0 !important;
   font-family: $body-font;
 }
 
-.form-control:focus {
+.search-bar .form-control:focus {
   color: white !important;
   outline: none !important;
   box-shadow: none!important;
