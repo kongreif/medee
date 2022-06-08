@@ -1,4 +1,5 @@
-<div class="container col-3" data-controller="convert-midi-to-json">
+<div class="container col-4" data-controller="convert-midi-to-json">
+  <h1 class="text-center">Edit - Midi File</h1>
   <%= simple_form_for(@midi) do |f| %>
     <%= f.input :title %>
     <%= f.input :description %>
@@ -10,6 +11,8 @@
     <!-- <%= f.input :midi_file, as: :file, class: "uploader"%> -->
     <%= f.input :midi_file, as: :file, input_html: { data: {convert_midi_to_json_target: "input", action: "change->convert-midi-to-json#toJson"} }, class: "uploader"%>
     <%= f.input :midi_json, as: :hidden, input_html: { data: { convert_midi_to_json_target: "result" } } %>
-    <%= f.submit %>
+    <div>
+      <%= f.button :submit, "Confirmed", class: "neon-button-secondary, neon-button-search" %>
+    </div>
   <% end %>
 </div>

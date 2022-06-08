@@ -24,6 +24,22 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: %i[username photo])
   end
 
+  def user_download_url(s3_filename, download_filename=nil)
+    s3_filename = s3_filename.to_s # converts pathnames to string
+    download_filename ||= s3_filename.split('/').last
+    url_options = {
+      expires_in:                   60.minutes,
+      response_content_disposition: "attachment; filename=\"#{download_filename}\""
+    }
+    object = bucket.object(s3_filename)
+    object.exists? ? object.presigned_url(:get, url_options).to_s : nil
+  end
+
+  def bucket
+    @bucket ||= Aws::S3::Resource.new(region: ENV['AWS_REGION']).bucket(ENV['AWS_BUCKET'])
+  end
+
+
   private
 
   def skip_pundit?
