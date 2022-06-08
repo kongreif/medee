@@ -90,3 +90,4 @@ end
 
 gem "cloudinary"
 gem "rails-social-share-button"
+gem 'aws-sdk-s3', require: false
