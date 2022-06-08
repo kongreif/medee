@@ -1,14 +1,14 @@
 <div class="show-description">
   <div class="show-description-artist">
   <% if @midi.user.photo.attached? %>
-    <%= cl_image_tag @midi.user.photo.key, height: 150, width: 150, crop: :thumb, gravity: :faces, radius: :max, quality: :auto, background: "#000000" %>
+    <%= image_tag @midi.user.photo, class: "avatar-midi-show" %>
   <% else %>
-      <%= image_tag "profile-picture-placeholder.png", height: 150, crop: :fill %>
+      <%= image_tag "profile-picture-placeholder.png", class: "avatar" %>
       <!-- TODO: make image link to user profile -->
   <% end %>
     <p><%= link_to @midi.user.username, profile_path(@midi.user) %></p>
   </div>
-  <div class="show-description-text">
+  <div>
     <h3>description</h3>
     <%= @midi.description %>
   </div>

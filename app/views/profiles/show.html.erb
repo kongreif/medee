@@ -1,10 +1,10 @@
+<!-- banner -->
 <div class="profile-banner">
   <div class="profile-banner-container">
     <% if @profile.user.photo.attached? %>
-      <%= cl_image_tag @profile.user.photo.key, height: 150, width: 150, crop: :thumb, gravity: :faces, radius: :max, quality: :auto, class: "profile-pic" %>
+      <%= image_tag @profile.user.photo, class: "profile-pic" %>
     <% else %>
-        <%= image_tag "profile-picture-placeholder.png", height: 150, crop: :fill, class: "profile-pic" %>
-        <!-- TODO: make image link to user profile -->
+        <%= image_tag "profile-picture-placeholder.png", class: "profile-pic" %>
     <% end %>
     <span class="profile-photo-edit">
       <% if @profile.user == current_user %>
