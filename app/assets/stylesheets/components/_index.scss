@@ -9,8 +9,10 @@
 @import "home/banner";
 @import "home/search";
 
+@import "search-bar/search_bar";
+
 @import "filter/filter";
-@import "filter/filter_midis";
+@import "midi_card_list";
 
 @import "buttons/neon_buttons";
 
@@ -18,5 +20,7 @@
 @import "bio_profile_card";
 @import "midi_show";
 @import "midi_uploder";
+@import "profile";
+@import "profile_banner";
 @import "comment";
 @import "avatar";

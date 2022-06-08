@@ -45,6 +45,8 @@ export default class extends Controller {
   playMidiFile = async () => {
     const context = new Tone.Context()
     Tone.setContext(context)
+    // console.log("playMidiFile::");
+    // console.log(context);
     // load a midi file in the browser
     const midi = this.jsonValue
     //the file name decoded from the first track
@@ -76,7 +78,12 @@ export default class extends Controller {
 
   stopMidiFile = async () => {
     console.log("stopMidifile() :: ")
-    // Tone.getContext().dispose;
-    Tone.Transport.pause();
+    console.log("====================");
+    console.log(Tone);
+    console.log("====================");
+    console.log(Tone.getContext);
+    // Tone.getContext.dispose();
+    // console.log(Tone);
+    // Tone.Transport.pause();
   }
 }

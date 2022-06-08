@@ -1,27 +1,31 @@
 <div class="index-container" data-controller="search-midis">
-  <div class="search-bar">
 <!-- ask Johannes if there are any problems with styling this search-form please, thank you -->
 <!--SEARCH START -->
-    <div>
+  <div class="search-bar-warp d-flex justify-content-center">
+    <div class="search-bar">
       <div>
         <%= form_with url: midis_path, method: :get, html: {class: "d-flex", data: {search_midis_target: "searchform"}} do |f| %>
           <%= f.text_field :query,
-            class: "form-control",
-            placeholder: "Type a midi title",
+            class: "form-control
+                    bg-black
+                    border-top-0
+                    border-start-0
+                    border-end-0",
+            placeholder: "Type a midi title...",
             value: params[:query],
             data: {
               search_midis_target: "searchinput",
               action: "keyup->search-midis#update"
             }
           %>
-          <%= f.submit "Search", class: "btn btn-primary" %>
+          <div><%= image_tag "search-icon.png", class: "search-icon" %></div>
+          <%# <%= f.submit "Search", class: "search-button"%>
+          <%# <button class="filter-button">filter</button> %>
         <% end %>
       </div>
     </div>
-<!--SEARCH END -->
   </div>
-  <div class="filter-midis">
-    <div class="filter-midis-container">
+<!--SEARCH END -->
     <div class="filter-wrap">
       <%= render "filter"%>
     </div>
@@ -29,6 +33,4 @@
     <div class="midi-card-list-wrap">
       <%= render "midi_card_list", midis: @midis %>
     </div>
-    </div>
-  </div>
 </div>

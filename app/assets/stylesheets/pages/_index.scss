@@ -3,33 +3,32 @@
 @import "footer";
 
 .index-container {
-  padding: 0;
+  padding-top: 50px;
   margin: 0;
   display: grid;
   grid-gap: 10px;
   height: 100%;
-  grid-template-rows: 100px 1fr;
-  grid-template-columns: 1fr;
-  grid-template-areas:'search-bar'
-                      'filter-midis';
+  grid-template-rows: 100px;
+  grid-template-columns: 300px 1fr;
+  grid-template-areas:'filter-wrap search-bar'
+                      'filter-wrap midi-card-list-wrap';
   font-family: $body-font;
   font-size: 15px;
 }
 
 .index-container > div {
-  background-color: rgb(55, 111, 118);
-  padding: 20px;
-  border: 1px solid rgb(255, 255, 255);
-  display: grid;
-  // justify-content: center;
-  // align-items: center;
+  // padding: 20px;
+}
+
+.filter-wrap {
+  grid-area: filter-wrap;
 }
 
 .search-bar {
+  background-color: $black;
   grid-area: search-bar;
 }
 
-.filter-midis{
-  grid-area: filter-midis;
-  padding: 0;
+.midi-card-list-wrap{
+  grid-area: midi-card-list-wrap;
 }
