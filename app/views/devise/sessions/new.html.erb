@@ -1,20 +1,27 @@
-<h2>Log in</h2>
+<div class="container col-3">
+  <div class="text-center"><h1>MEDEE</h1></div>
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :email,
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" } %>
+      <%= f.input :password,
+                  required: false,
+                  input_html: { autocomplete: "current-password" } %>
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    </div>
+    <div class="align-items-center text-center">
+        <div class="d-flex" style="margin-left: 126px">
+          <%= f.button :submit, "Log in", class: "btn btn-light" %>
+          <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+              <%= link_to "Sign up", new_registration_path(resource_name), class: "btn btn-light", style: "margin-left: 40px" %><br />
+            <% end %>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in", class: "btn btn-light" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+        </div>
+        <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+          <%= link_to "Forgot your password?", new_password_path(resource_name), style: "margin-top: 8px; color: #fd0d0dad;"%><br />
+        <% end %>
+    </div>
+  <% end %>
+</div>

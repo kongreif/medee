@@ -1,8 +1,12 @@
-<h1>Edit user name</h1>
-<div class="uploader-pic d-flex justify-content-center col-3">
-  <%= simple_form_for current_user, url: update_profile_photo_path do |f| %>
-    <%= f.input :username %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit %>
-  <% end %>
+<div class="container col-3">
+  <div class="text-center"><h1>Profil</h1></div>
+  <div class="uploader-pic">
+    <%= simple_form_for current_user, url: update_profile_photo_path do |f| %>
+      <%= f.input :username %>
+      <%= f.input :photo, as: :file %>
+      <div>
+       <%= f.button :submit, "Confirmed", class: "neon-button-secondary" %>
+      </div>
+    <% end %>
+  </div>
 </div>
