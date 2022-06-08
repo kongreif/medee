@@ -29,9 +29,9 @@
       <li class="username"> <%= current_user.username %></li>
       <li class="user-avatar nav-item dropdown">
         <% if current_user.photo.attached? %>
-          <%= cl_image_tag current_user.photo.key, height: 40, width: 40, crop: :thumb, gravity: :faces, radius: :max, quality: :auto, background: "#000000" %>
+          <%= image_tag current_user.photo, class: "navbar-avatar" %>
         <% else %>
-            <%= image_tag "profile-picture-placeholder.png", height: 40, crop: :fill %>
+            <%= image_tag "profile-picture-placeholder.png", class: "navbar-avatar" %>
         <% end %></li>
       <div class="avatar-dropdown-menu">
         <li class="avatar-dropdown-item"><%= link_to "My profile", profile_path(current_user.profile), class: "navbar-link" %></li>
