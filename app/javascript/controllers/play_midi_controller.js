@@ -12,7 +12,7 @@ export default class extends Controller {
   }
 
   async playOnClick() {
-    console.log("playOnClick() TOP LINE")
+    // console.log("playOnClick() TOP LINE")
     // console.log("playButtonTarget.innerHTML:============");
     // console.log(this.playButtonTarget.innerHTML);
     // this.playMidiFile();
@@ -23,14 +23,15 @@ export default class extends Controller {
     // const synth = new Tone.Synth().toDestination();
     // synth.triggerAttackRelease("C4", "8n");
     var bool = this.playButtonTarget.classList.value == "hide"
+    var index_bool = this.playButtonTarget.classList.value == "midi-card-play-button hide"
     // console.log(bool)
-    if (this.playButtonTarget.classList.value == "hide") {
+    if (this.playButtonTarget.classList.value == "hide" || this.playButtonTarget.classList.value == "midi-card-play-button hide") {
       // music must play here
       console.log("PLAY MUSIC");
       await Tone.start();
       this.playMidiFile();
     }
-    else if (!(this.playButtonTarget.classList.value == "hide")) {
+    else if (!(this.playButtonTarget.classList.value == "hide") || !(this.playButtonTarget.classList.value == "midi-card-play-button hide") ) {
       //music must pause here
       console.log("PAUSE MUSIC");
       // await Tone.getConstext().dispose();
@@ -82,7 +83,7 @@ export default class extends Controller {
     console.log(Tone);
     console.log("====================");
     console.log(Tone.getContext);
-    // Tone.getContext.dispose();
+    Tone.getContext.dispose;
     // console.log(Tone);
     // Tone.Transport.pause();
   }
