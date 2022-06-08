@@ -28,14 +28,15 @@ export default class extends Controller {
     if (this.playButtonTarget.classList.value == "hide" || this.playButtonTarget.classList.value == "midi-card-play-button hide") {
       // music must play here
       console.log("PLAY MUSIC");
-      await Tone.start();
       this.playMidiFile();
+      // await Tone.start();
     }
     else if (!(this.playButtonTarget.classList.value == "hide") || !(this.playButtonTarget.classList.value == "midi-card-play-button hide") ) {
       //music must pause here
       console.log("PAUSE MUSIC");
-      // await Tone.getConstext().dispose();
-      this.stopMidiFile();
+      // await Tone.getContext().dispose();
+      Tone.getContext().close();
+      // this.stopMidiFile();
     }
 
     // const dist = new Tone.Distortion(0.8).toDestination();
@@ -46,6 +47,7 @@ export default class extends Controller {
   playMidiFile = async () => {
     const context = new Tone.Context()
     Tone.setContext(context)
+    await Tone.start();
     // console.log("playMidiFile::");
     // console.log(context);
     // load a midi file in the browser
@@ -79,11 +81,13 @@ export default class extends Controller {
 
   stopMidiFile = async () => {
     console.log("stopMidifile() :: ")
-    console.log("====================");
-    console.log(Tone);
-    console.log("====================");
-    console.log(Tone.getContext);
-    Tone.getContext.dispose;
+    // console.log("====================");
+    // console.log(Tone);
+    // console.log("====================");
+    // console.log(Tone.getContext);
+    // Tone.getContext.dispose;
+    console.log("disposing Tone.context ...")
+    Tone.getContext().dispose();
     // console.log(Tone);
     // Tone.Transport.pause();
   }
