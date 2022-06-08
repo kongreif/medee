@@ -1,3 +1,31 @@
 .filter-category{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.filter-category label {
+  font-family: $body-font;
+  padding: 5px;
+}
+
+.category-submit-button{
+  margin-top: 40px;
+  border: none;
+  background-color: transparent;
+  color: rgb(169, 169, 169);
+  font-size: 20px;
+  border: 2px solid rgb(169, 169, 169);
+  padding: 0px 15px;
+  text-transform: uppercase;
+}
+
+.category-submit-button:hover{
+  color: white;
+  font-family: $body-font;
+  border: 2px solid white;
+}
+
+.category-submit-button-wrap{
+  font-weight: 600;
 }

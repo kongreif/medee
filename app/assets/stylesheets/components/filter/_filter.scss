@@ -8,7 +8,7 @@
   width: 25%;
   min-width: 300px;
   height: 100vh;
-  position: sticky;
+  // position: sticky;
   top: 20px;
 }
 
@@ -18,12 +18,12 @@
   display: grid;
   // grid-gap: 10px;
   height: 100%;
-  grid-template-rows: 100px 300px 200px 300px;
+  grid-template-rows: 100px 300px;
   grid-template-columns: 1fr;
   grid-template-areas:'filter-by'
-                      'filter-category'
-                      'filter-bpm-range'
-                      'filter-mood';
+                      'filter-category';
+                      // 'filter-bpm-range'
+                      // 'filter-mood';
   font-family: $body-font;
   font-size: 15px;
   border-right: 0.5px solid grey;
@@ -48,12 +48,12 @@
   grid-area: filter-category;
 }
 
-.filter-bpm-range{
-  grid-area: filter-bpm-range;
-}
+// .filter-bpm-range{
+//   grid-area: filter-bpm-range;
+// }
 
-.filter-mood{
-  grid-area: filter-mood;
-}
+// .filter-mood{
+//   grid-area: filter-mood;
+// }
 
 // filter grid setup end

@@ -4,9 +4,16 @@ class MidisController < ApplicationController
   def index
     @midis = policy_scope(Midi)
 
+    if params.values.size > 2
+      categories = params.values[0..-2]
+      @midis = @midis.where(category: categories)
+    end
     # required for search
     @midis = Midi.search_by_title(params[:query]) if params[:query].present?
+    @midis = @midis.where(category: params.values) if params[:query].present? && params.values.size > 3
     dynamic_search_response("midi_card_list", @midis)
+    # @filtered_midis = @filtered_midis.where(category: params.values)
+    # raise
   end
 
   def show
