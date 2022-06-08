@@ -6,9 +6,9 @@
       <div class="notification">
           <div class="show-description-artist">
             <% if comment.user.photo.attached? %>
-              <%= image_tag comment.user.photo %>
+              <%= image_tag comment.user.photo, class: "navbar-avatar" %>
             <% else %>
-                <%= image_tag("profile-picture-placeholder.png", class: "avatar") %>
+                <%= image_tag "profile-picture-placeholder.png", class: "navbar-avatar" %>
                 <!-- TODO: make image link to user profile -->
             <% end %>
             <p> <%= comment.user.username %></p>
