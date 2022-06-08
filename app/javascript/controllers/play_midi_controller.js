@@ -5,7 +5,8 @@ import { Midi } from '@tonejs/midi'
 // Connects to data-controller="play-midi"
 export default class extends Controller {
 
-  static values = {url: String, json: Object}
+  // static values = {url: String, json: Object}
+  static values = {json: Object}
 
   connect() {
   }
