@@ -1,7 +1,6 @@
 <div class="container">
   <%# Midi player on top %>
   <%= render "midis/show_midi", midi: @midi %>
-  <%= link_to "Download", "https://medee-870.s3.eu-central-1.amazonaws.com/#{@midi.midi_file.key}", target: "blank" %>
 
   <%# Description and artist info %>
   <%= render "midis/show_description", locals: { midi: @midi, chart_data: @chart_data } %>
