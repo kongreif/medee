@@ -23,7 +23,7 @@
   background-color: transparent;
 }
 
-.search-botton{
+.search-button{
   display: inline-block;
   text-transform: uppercase;
   letter-spacing: 4px;
@@ -43,7 +43,7 @@
   // text-align: center;
 }
 
-.search-botton:hover {
+.search-button:hover {
   color: #FFFFFF;
   background-color: $primary-blue;
   box-shadow: 0 0 5px $primary-blue, 0 0 20px $primary-blue, 0 0 40px $primary-blue;
