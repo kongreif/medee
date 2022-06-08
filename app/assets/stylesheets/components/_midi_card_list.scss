@@ -1,0 +1,18 @@
+.midi-card-list-wrap {
+  display: flex;
+  width: 100%;
+  min-width: 900px;
+  margin: 0 20px;
+  justify-content: center;
+}
+
+.midi-available-count {
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+
+.midi-card-list {
+  width: 100%;
+  max-width: 900px;
+  // padding-top: 50px;
+}
