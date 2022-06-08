@@ -10,7 +10,7 @@
     <!-- category example start (hard coded) -->
     <form action="/midis">
       <div>
-        <input type="checkbox" id="lead" name="Lead" value="1" <%= "checked" if params[:Lead] %> >
+        <input type="checkbox" id="lead" name="Lead" value="1" <%= "checked" if params[:Lead] %>>
         <label for="lead">Lead</label>
       </div>
       <div>
@@ -18,19 +18,19 @@
         <label for="chords">Chords</label>
       </div>
       <div>
-        <input type="checkbox" id="pads" name="Pads" value="3">
+        <input type="checkbox" id="pads" name="Pads" value="3" <%= "checked" if params[:Pads] %>>
         <label for="pads">Pads</label>
       </div>
       <div>
-        <input type="checkbox" id="bassline" name="Bassline" value="4">
+        <input type="checkbox" id="bassline" name="Bassline" value="4" <%= "checked" if params[:Bassline] %>>
         <label for="bassline">Bassline</label>
       </div>
       <div>
-        <input type="checkbox" id="drums" name="Drums" value="4">
+        <input type="checkbox" id="drums" name="Drums" value="4" <%= "checked" if params[:Drums] %>>
         <label for="drums">Drums</label>
       </div>
       <div>
-        <input type="checkbox" id="plucked" name="Plucked" value="4">
+        <input type="checkbox" id="plucked" name="Plucked" value="4" <%= "checked" if params[:Plucked] %>>
         <label for="plucked">Plucked</label>
       </div>
       <div class="category-submit-button-wrap d-flex justify-content-center">
