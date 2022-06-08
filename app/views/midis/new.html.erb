@@ -9,6 +9,7 @@
     <%= f.input :mood_ids, collection: Mood.all, as: :check_boxes, include_hidden: false %>
     <%= f.input :midi_file, as: :file, input_html: { data: {convert_midi_to_json_target: "input", action: "change->convert-midi-to-json#toJson"} }, class: "uploader"%>
     <%= f.input :midi_json, as: :hidden, input_html: { data: { convert_midi_to_json_target: "result" } } %>
+    <%= f.input :chart_data, as: :hidden, input_html: { data: { convert_midi_to_json_target: "chart" }} %>
     <%= f.submit %>
   <% end %>
 </div>
