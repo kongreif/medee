@@ -77,7 +77,7 @@ class MidisController < ApplicationController
   private
 
   def midi_params
-    params.require(:midi).permit(:title, :key_signature, :time_signature, :description, :midi_file, :midi_json, :category, mood_ids: [])
+    params.require(:midi).permit(:title, :key_signature, :time_signature, :description, :midi_file, :midi_json, :bpm, :category, mood_ids: [])
   end
 
   def dynamic_search_response(str_partial, query_data)

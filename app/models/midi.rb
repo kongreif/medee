@@ -6,8 +6,8 @@ class Midi < ApplicationRecord
   has_many :upvotes
   has_one_attached :midi_file
   has_many :comments
-
   belongs_to :user
+  
   validates :title, presence: true
   validates :key_signature, presence: true
   validates :time_signature, presence: true
