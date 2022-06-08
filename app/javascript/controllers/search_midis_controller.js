@@ -9,22 +9,28 @@ export default class extends Controller {
     // console.log(this.searchinputTarget)
     // console.log(this.midilistTarget)
     this.oldLocation = window.location.href
+    this.pathName = window.location.pathname
   }
 
   update() {
     // console.log("TODO: send request in AJAX")
-    const url = `${this.searchformTarget.action}?query=${this.searchinputTarget.value}`
-    console.log(this.searchinputTarget.value)
-    if(this.searchinputTarget.value == ""){
-      console.log(`${this.oldLocation}&query=${this.searchinputTarget.value}`)
-      fetch(`${this.oldLocation}&query=${this.searchinputTarget.value}`, {headers: {"Accept": "text/plain"}})
+    // console.log(`OLD: ${this.oldLocation}`)
+    let url = `${this.searchformTarget.action}?query=${this.searchinputTarget.value}`
+    if(this.oldLocation.match(/\?/)){
+      url = `${this.oldLocation}&query=${this.searchinputTarget.value}`
+    } else {
+      url = `${this.oldLocation}?query=${this.searchinputTarget.value}`
+    }
+    // console.log(url)
+    fetch(`${url}`, {headers: {"Accept": "text/plain"}})
       .then(response => response.text())
       .then((data) => {
         this.midilistTarget.outerHTML = data
         // console.log(data)
-    })
-    } else{
-      fetch(url, {headers: {"Accept": "text/plain"}})
+      })
+    if(this.searchinputTarget.value == ""){
+      console.log(`${this.oldLocation}`)
+      fetch(`${this.oldLocation}`, {headers: {"Accept": "text/plain"}})
       .then(response => response.text())
       .then((data) => {
         this.midilistTarget.outerHTML = data

@@ -8,7 +8,7 @@
   display: grid;
   grid-gap: 10px;
   height: 100%;
-  grid-template-rows: 100px;
+  grid-template-rows: 100px 1fr;
   grid-template-columns: 300px 1fr;
   grid-template-areas:'filter-wrap search-bar'
                       'filter-wrap midi-card-list-wrap';
@@ -31,4 +31,5 @@
 
 .midi-card-list-wrap{
   grid-area: midi-card-list-wrap;
+  min-height: 100vh;
 }

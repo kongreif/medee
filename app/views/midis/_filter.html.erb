@@ -10,11 +10,11 @@
     <!-- category example start (hard coded) -->
     <form action="/midis">
       <div>
-        <input type="checkbox" id="lead" name="Lead" value="1" >
+        <input type="checkbox" id="lead" name="Lead" value="1" <%= "checked" if params[:Lead] %> >
         <label for="lead">Lead</label>
       </div>
       <div>
-        <input type="checkbox" id="chords" name="Chords" value="2" >
+        <input type="checkbox" id="chords" name="Chords" value="2" <%= "checked" if params[:Chords] %>>
         <label for="chords">Chords</label>
       </div>
       <div>
