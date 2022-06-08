@@ -13,33 +13,17 @@
     </div>
     <div class="midi-card-details-image">
       <!--
+      , min: @bottom, max: @top,
       # Charting / Plotting START
       # -------------------------------------------------------------------------------------
       -->
-      <% json = JSON.parse(midi.midi_json) %>
-      <% chart_data = [] %>
-      <% arr_notes = json["tracks"][0]["notes"] %>
-      <% arr_notes.each { |note| chart_data << [note["time"], note["midi"]] } %>
-      <!-- # find the lowest note -->
-      <% lowest_note = 127 %>
-      <% arr_notes.each do |note| %>
-        <% lowest_note = note["midi"] if note["midi"] < lowest_note %>
-      <% end %>
-      <!-- # find the highest note -->
-      <% highest_note = 1 %>
-      <% arr_notes.each do |note| %>
-        <% highest_note = note["midi"] if note["midi"] > highest_note %>
-      <% end %>
-      <!-- # adjusted y-axis spectrum based on hightes/lowest note -->
-      <% bottom = lowest_note - 5 %>
-      <% bottom = 0 if bottom.negative? %>
-      <% top = highest_note + 5 %>
+      <%= scatter_chart(eval(midi.chart_data), id: "users-chart", width: :inherit, height: "70px" ) %>
+      <%# <%= scatter_chart(midi.chart_data, min: bottom, max: top, id: "users-chart", width: :inherit, height: "70px" ) %>
        <!--
       # -------------------------------------------------------------------------------------
       # Charting / Plotting END
       -->
 
-      <%= scatter_chart(chart_data, min: bottom, max: top, id: "users-chart", width: :inherit, height: "70px" ) %>
     </div>
     <div class="midi-card-details-bottom">
       <%= render "/midis/midi_card_buttons", midi: midi %>

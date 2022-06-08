@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_07_151610) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_08_100533) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -73,6 +73,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_07_151610) do
     t.integer "category"
     t.jsonb "midi_json"
     t.integer "bpm"
+    t.jsonb "chart_data"
     t.index ["user_id"], name: "index_midis_on_user_id"
   end
 

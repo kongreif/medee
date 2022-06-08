@@ -8,29 +8,11 @@ export default class extends Controller {
 
   connect() {
     // console.log("connect convert midi to json")
-    console.log(this.chartTarget);
+    // console.log(this.chartTarget);
   }
 
   async toJson() {
     await this.getBase64(this.inputTarget.files[0], this.resultTarget, this.chartTarget);
-    // console.log(`toJson::${this.inputTarget.files[0]}`)
-    // console.log(`toJson::${this.resultTarget}`)
-    // await this.getChartData(this.resultTarget, this.chartDataResultTarget) // TODO check parameters
-  }
-
-  getChartData = async (file, target) => {
-    console.log("getChartData::");
-    console.log(file.value);
-    // const json = JSON.parse(file);
-    // console.log(json);
-    // var chart_data = [];
-    // const arr_notes = json["tracks"][0]["notes"];
-    // for ( let i = 0; i < arr_notes.length(); i++ )
-    // {
-    //   var tmp_arr = [ arr_notes[i]["time"], arr_notes[i]["midi"] ];
-    //   chart_data.push(tmp_arr);
-    // }
-    // target.value = chart_data
   }
 
   getBase64 = async (file, target, target2) => {
@@ -39,11 +21,29 @@ export default class extends Controller {
     reader.onload = async function () {
       const midi = await Midi.fromUrl(reader.result);
       target.value = JSON.stringify(midi);
-      console.log(midi);
-
+      // console.log(target.value);
+      // basic parsing of json
+      // takes notes and creates an array of arrays([midikey, timestamp], [midikey, timestamp], ...)
+      const json_parsed = JSON.parse(target.value);
+      var chart_data = [];
+      const arr_notes = json_parsed["tracks"][0]["notes"];
+      arr_notes.forEach( (note) => {
+        chart_data.push( [ note["time"], note["midi"] ] );
+      })
+      // console.log(chart_data);
+      target2.value = JSON.stringify(chart_data);
     };
-
-
- }
-
+  }
 }
+
+// var pre_chart_data = [];
+// const arr_notes = json_parsed["tracks"][0]["notes"];
+// arr_notes.forEach( (note) => {
+  //   pre_chart_data.push( note["time"] );
+  //   pre_chart_data.push( note["midi"] );
+  // })
+
+
+  // console.log(pre_chart_data);
+  // target2.value = pre_chart_data;
+  // console.log(target2.value);
