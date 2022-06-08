@@ -8,14 +8,33 @@
   <div class="filter-category">
     <p>category</p>
     <!-- category example start (hard coded) -->
-    <div>
-      <input type="checkbox" id="rock" name="rock" checked>
-      <label for="rock">Rock</label>
-    </div>
-    <div>
-      <input type="checkbox" id="Heavy-metal" name="Heavy-metal" checked>
-      <label for="Heavy-metal">Heavy Metal</label>
-    </div>
+    <form action="/midis">
+      <div>
+        <input type="checkbox" id="lead" name="Lead" value="1" >
+        <label for="lead">Lead</label>
+      </div>
+      <div>
+        <input type="checkbox" id="chords" name="Chords" value="2" >
+        <label for="chords">Chords</label>
+      </div>
+      <div>
+        <input type="checkbox" id="pads" name="Pads" value="3">
+        <label for="pads">Pads</label>
+      </div>
+      <div>
+        <input type="checkbox" id="bassline" name="Bassline" value="4">
+        <label for="bassline">Bassline</label>
+      </div>
+      <div>
+        <input type="checkbox" id="drums" name="Drums" value="4">
+        <label for="drums">Drums</label>
+      </div>
+      <div>
+        <input type="checkbox" id="plucked" name="Plucked" value="4">
+        <label for="plucked">Plucked</label>
+      </div>
+      <input type="submit">
+    </form>
     <!-- category example end -->
   </div>
 
