@@ -5,19 +5,39 @@ import { Midi } from '@tonejs/midi'
 // Connects to data-controller="play-midi"
 export default class extends Controller {
 
-  // static values = {url: String, json: Object}
-  static values = {json: Object}
+  static values = {url: String, json: Object}
+  static targets = [ "playButton", "pauseButton" ]
 
   connect() {
   }
 
   async playOnClick() {
-    console.log("play midi playOnClick()")
-    await Tone.start()
+    // console.log("playOnClick() TOP LINE")
+    // console.log("playButtonTarget.innerHTML:============");
+    // console.log(this.playButtonTarget.innerHTML);
+    // this.playMidiFile();
+
+    this.playButtonTarget.classList.toggle("hide");
+    this.pauseButtonTarget.classList.toggle("hide");
+
     // const synth = new Tone.Synth().toDestination();
     // synth.triggerAttackRelease("C4", "8n");
-
-    this.playMidiFile();
+    var bool = this.playButtonTarget.classList.value == "hide"
+    var index_bool = this.playButtonTarget.classList.value == "midi-card-play-button hide"
+    // console.log(bool)
+    if (this.playButtonTarget.classList.value == "hide" || this.playButtonTarget.classList.value == "midi-card-play-button hide") {
+      // music must play here
+      console.log("PLAY MUSIC");
+      this.playMidiFile();
+      // await Tone.start();
+    }
+    else if (!(this.playButtonTarget.classList.value == "hide") || !(this.playButtonTarget.classList.value == "midi-card-play-button hide") ) {
+      //music must pause here
+      console.log("PAUSE MUSIC");
+      // await Tone.getContext().dispose();
+      Tone.getContext().close();
+      // this.stopMidiFile();
+    }
 
     // const dist = new Tone.Distortion(0.8).toDestination();
     // const fm = new Tone.FMSynth().connect(dist);
@@ -27,11 +47,12 @@ export default class extends Controller {
   playMidiFile = async () => {
     const context = new Tone.Context()
     Tone.setContext(context)
+    await Tone.start();
+    // console.log("playMidiFile::");
+    // console.log(context);
     // load a midi file in the browser
-    // const midi = await Midi.fromUrl(this.urlValue)
     const midi = this.jsonValue
     //the file name decoded from the first track
-    // const name = midi.name
     //get the tracks
     midi.tracks.forEach(track => {
       //tracks have notes and controlChanges
@@ -56,5 +77,18 @@ export default class extends Controller {
       //the track also has a channel and instrument
       //track.instrument.name
     })
+  }
+
+  stopMidiFile = async () => {
+    console.log("stopMidifile() :: ")
+    // console.log("====================");
+    // console.log(Tone);
+    // console.log("====================");
+    // console.log(Tone.getContext);
+    // Tone.getContext.dispose;
+    console.log("disposing Tone.context ...")
+    Tone.getContext().dispose();
+    // console.log(Tone);
+    // Tone.Transport.pause();
   }
 }

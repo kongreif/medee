@@ -10,6 +10,10 @@
   padding: 40px 40px 0px 40px;
 }
 
+.hide {
+  display: none;
+}
+
 .show-midi-info {
   flex-grow: 1;
 }
@@ -42,6 +46,16 @@
   display: flex;
   padding-top: 20px;
   gap: 20px;
+}
+
+.show-description a {
+  text-decoration: none;
+  color: white;
+}
+
+.show-description a:hover {
+  text-decoration: none;
+  color: white;
 }
 
 .show-description-artist p {

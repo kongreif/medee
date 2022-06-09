@@ -26,57 +26,57 @@ MOODS.each do |mood|
   puts "created #{md.name} - mood"
 end
 
-# for sake of seeding:
-TIME_SIGNATURES = ["2/4", "3/4", "4/4", "2/2", "3/2", "4/2", "2/8", "3/8", "4/8"]
+# # for sake of seeding:
+# TIME_SIGNATURES = ["2/4", "3/4", "4/4", "2/2", "3/2", "4/2", "2/8", "3/8", "4/8"]
 
-# creates 15 random users
-# User.create(email: "gerald@gmx.de", password: "12345")
+# # creates 15 random users
+# # User.create(email: "gerald@gmx.de", password: "12345")
 
-15.times do
-  puts "creating a user:"
-  user = User.create(
-    {
-      username: Faker::Name.unique.name,
-      email: Faker::Internet.unique.email,
-      password: '123456'
-    }
-  )
-  puts "created #{user.email}"
-end
+# 15.times do
+#   puts "creating a user:"
+#   user = User.create(
+#     {
+#       username: Faker::Name.unique.name,
+#       email: Faker::Internet.unique.email,
+#       password: '123456'
+#     }
+#   )
+#   puts "created #{user.email}"
+# end
 
-# generates 20 random midi files
-# puts "Midi.destroy_all"
-# Midi.destroy_all
+# # generates 20 random midi files
+# # puts "Midi.destroy_all"
+# # Midi.destroy_all
 
-20.times do
-  # this will be executed 20 times
-  puts "creating a midi:"
-  midi = Midi.create(
-    {
-      title: Faker::Music.album,
-      key_signature: rand(1..24),
-      time_signature: TIME_SIGNATURES.sample,
-      user_id: User.pluck(:id).sample
-    }
-  )
+# 20.times do
+#   # this will be executed 20 times
+#   puts "creating a midi:"
+#   midi = Midi.create(
+#     {
+#       title: Faker::Music.album,
+#       key_signature: rand(1..24),
+#       time_signature: TIME_SIGNATURES.sample,
+#       user_id: User.pluck(:id).sample
+#     }
+#   )
 
-  # creating between 0 and 4 moods for a single midi
-  arr_mood = Mood.all.sample(4)
-  i = 0
-  rand(0..4).times do
-    MidiMood.create(
-      {
-        midi: midi,
-        # mood: Mood.all.shuffle[0]
-        mood: arr_mood[i]
-      }
-    )
-    i += 1
-  end
+#   # creating between 0 and 4 moods for a single midi
+#   arr_mood = Mood.all.sample(4)
+#   i = 0
+#   rand(0..4).times do
+#     MidiMood.create(
+#       {
+#         midi: midi,
+#         # mood: Mood.all.shuffle[0]
+#         mood: arr_mood[i]
+#       }
+#     )
+#     i += 1
+#   end
 
-  # adding a category to a MIDI
-  midi.category = rand(1..6)
-  midi.save
+#   # adding a category to a MIDI
+#   midi.category = rand(1..6)
+#   midi.save
 
-  puts "created #{midi.title}"
-end
+#   puts "created #{midi.title}"
+# end

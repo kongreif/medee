@@ -7,6 +7,10 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
     @user = @profile.user
     @midis = @user.midis
+    @liked_midis = []
+    @user.upvotes.each do |upvote|
+      @liked_midis.push(upvote.midi)
+    end
     @soundcloud = @profile.soundcloud_link
     @instagram = @profile.instagram_link
     @facebook = @profile.facebook_link
