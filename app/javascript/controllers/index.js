@@ -7,6 +7,9 @@ import { application } from "./application"
 import ConvertMidiToJsonController from "./convert_midi_to_json_controller.js"
 application.register("convert-midi-to-json", ConvertMidiToJsonController)
 
+import IncreaseDownloadController from "./increase_download_controller.js"
+application.register("increase-download", IncreaseDownloadController)
+
 import PlayMidiController from "./play_midi_controller.js"
 application.register("play-midi", PlayMidiController)
 
