@@ -7,6 +7,11 @@
   background-color: black;
 }
 
+.login-title{
+  font-family: $body-font;
+  text-transform: uppercase;
+}
+
 .login-form-background-wrap {
   position: relative;
   display: flex;
@@ -68,6 +73,23 @@
   opacity: 0.99;
 }
 
-.login_button {
-  border: 1px solid white !important;
+.login_button:hover {
+  background-color: black;
+  color:white;
+}
+
+.signup-link{
+  text-decoration: none;
+  border: 1px solid black;
+  background-color: #a3a3a370;
+  color: white;
+  font-family: $body-font;
+  text-transform: uppercase;
+  padding: 14px 9px;
+  border-radius: 3px;
+}
+
+.signup-link:hover {
+  background-color: white;
+  color: black;
 }
