@@ -18,18 +18,21 @@
             <p> <%= comment.content %></p>
           </div>
           <div class="notification-actions">
-            <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-            <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+            <%# <a href="#"><i class="fas fa-pencil-alt"></i></a> %>
+            <%= link_to  midi_comment_path(comment.midi, comment), data: {turbo_method: :delete} do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
           </div>
       </div>
     <% end %>
   </div>
-<div class="show-comments">
-    <%= simple_form_for [@midi, @comment] do |f| %>
-      <%= f.input :content,
-                  placeholder: 'Add a comment..',
-                  required: true
-                  %>
-      <%= f.submit class: "btn btn-light"%>
+
+    <%= simple_form_for [@midi, @comment], html: {style: "display: flex;justify-content: space-between;align-items: center;"} do |f| %>
+        <%= f.input :content,
+                    placeholder: 'Add a comment..',
+                    required: false,
+                    input_html: {style: "width: 1063px"},
+                    label: false
+                    %>
+        <%= f.submit class: "btn btn-light", style: "margin-bottom: 16px"%>
     <% end %>
-</div>
