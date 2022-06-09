@@ -17,6 +17,13 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    authorize @comment
+    @comment.destroy
+    redirect_to midi_path(@comment.midi), status: :see_other
+  end
+
   private
 
   def comment_params
