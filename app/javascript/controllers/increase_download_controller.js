@@ -3,9 +3,10 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="increase-download"
 export default class extends Controller {
     static targets = [];
-    static values = { midiID: Number };
+    static values = { midiID: String };
   connect() {
     console.log("increase_download_controller::CONNECT");
+    console.log(this.midiIDValue);
     // console.log(this.downloadCounterTarget);
     // this.dl_counter = 0;
   }
