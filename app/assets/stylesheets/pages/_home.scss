@@ -5,7 +5,7 @@
   display: grid;
   grid-gap: 10px;
   height: 100%;
-  grid-template-rows: 75vh 130px 50vh 1fr;
+  grid-template-rows: 75vh 130px 80vh 1fr;
   grid-template-columns: 1fr;
   grid-template-areas:'banner'
                       'search'
@@ -32,6 +32,7 @@
 }
 .rotating-slide {
   grid-area: rotating-slide;
+
 }
 .midis-container {
   grid-area: midis-container;

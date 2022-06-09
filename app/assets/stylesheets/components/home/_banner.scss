@@ -10,8 +10,8 @@
 .banner-logo-burrito {
   position: relative;
   // left: 100px;
-  width: 250px;
-  height: 250px;
+  width: 400px;
+  height: 400px;
 }
 
 .banner-logo{
@@ -81,4 +81,15 @@
   font-size: 150px;
   top: 125px;
   font-weight: 900;
+  text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #a9a649, 0 -2px 8px #dfdb5e;
+
+//   animation-name: blinker;
+//   animation-duration: 5s;
+//   animation-timing-function: linear;
+//  /*  animation-iteration-count: infinite; */
 }
+
+//  @keyframes blinker {
+//   0% { opacity: 0.2; }
+//   100% { opacity: 1.0; }
+//  }
