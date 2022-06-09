@@ -16,6 +16,11 @@ class MidisController < ApplicationController
     # raise
   end
 
+  def increase_download_counter
+    @midi = Midi.find(params[:id])
+    @midi.download_count += 1
+  end
+
   def show
     @midi = Midi.find(params[:id])
     @comment = Comment.new

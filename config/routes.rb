@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :midis do
     resources :comments, only: %i[create destroy]
     resources :upvotes, only: %i[create destroy]
+    get "midi/:id/download_count", to: "midis#increase_download_counter", as: :increase_download
   end
   resources :profiles, only: %i[edit update show]
 
