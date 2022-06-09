@@ -4,13 +4,13 @@
     <% if midi.upvotes.where(user: current_user).empty? %>
       <%= button_to (midi_upvotes_path(midi)), class: "midi-button" do %>
         <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10.9997 18.25L9.67051 17.0631C4.94967 12.8639 1.83301 10.0944 1.83301 6.6955C1.83301 3.92602 4.05134 1.75 6.87467 1.75C8.46967 1.75 10.0005 2.47834 10.9997 3.62929C11.9988 2.47834 13.5297 1.75 15.1247 1.75C17.948 1.75 20.1663 3.92602 20.1663 6.6955C20.1663 10.0944 17.0497 12.8639 12.3288 17.0721L10.9997 18.25Z" stroke="white" stroke-width="2" stroke-linecap="square"/>
+          <path d="M10.9997 18.25L9.67051 17.0631C4.94967 12.8639 1.83301 10.0944 1.83301 6.6955C1.83301 3.92602 4.05134 1.75 6.87467 1.75C8.46967 1.75 10.0005 2.47834 10.9997 3.62929C11.9988 2.47834 13.5297 1.75 15.1247 1.75C17.948 1.75 20.1663 3.92602 20.1663 6.6955C20.1663 10.0944 17.0497 12.8639 12.3288 17.0721L10.9997 18.25Z" stroke="white" stroke-width="2" stroke-linecap="square"/>
         </svg>
       <% end %>
     <% else %>
       <%= button_to (midi_upvote_path(midi, midi.upvotes.where(user: current_user).first)), method: :delete, class: "midi-button" do %>
         <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10.9997 18.25L9.67051 17.0631C4.94967 12.8639 1.83301 10.0944 1.83301 6.6955C1.83301 3.92602 4.05134 1.75 6.87467 1.75C8.46967 1.75 10.0005 2.47834 10.9997 3.62929C11.9988 2.47834 13.5297 1.75 15.1247 1.75C17.948 1.75 20.1663 3.92602 20.1663 6.6955C20.1663 10.0944 17.0497 12.8639 12.3288 17.0721L10.9997 18.25Z" fill="#FF0000" stroke="#FF0000" stroke-width="2" stroke-linecap="square"/>
+          <path d="M10.9997 18.25L9.67051 17.0631C4.94967 12.8639 1.83301 10.0944 1.83301 6.6955C1.83301 3.92602 4.05134 1.75 6.87467 1.75C8.46967 1.75 10.0005 2.47834 10.9997 3.62929C11.9988 2.47834 13.5297 1.75 15.1247 1.75C17.948 1.75 20.1663 3.92602 20.1663 6.6955C20.1663 10.0944 17.0497 12.8639 12.3288 17.0721L10.9997 18.25Z" fill="#FF0000" stroke="#FF0000" stroke-width="2" stroke-linecap="square"/>
         </svg>
       <% end %>
     <% end %>
@@ -19,12 +19,14 @@
   </div>
   <div class="midi-card-details-bottom-downloads">
     <div>
-      <svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M1 15.8948V19.1053C1 20.2099 1.89543 21.1053 3 21.1053H21.0702C22.1747 21.1053 23.0702 20.2099 23.0702 19.1053V15.8948" stroke="#00D1FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M19.2609 11.179L12.0966 16.7419C12.0605 16.7699 12.01 16.7699 11.9739 16.7419L4.80961 11.179C4.73437 11.1206 4.77569 11 4.87094 11H8.65454C8.70977 11 8.75454 10.9552 8.75454 10.9V0.100001C8.75454 0.0447721 8.79931 0 8.85454 0H15.2159C15.2712 0 15.3159 0.0447715 15.3159 0.1V10.9C15.3159 10.9552 15.3607 11 15.4159 11H19.1995C19.2948 11 19.3361 11.1206 19.2609 11.179Z" fill="#00D1FF"/>
-      </svg>
+      <%= link_to ("https://medee-870.s3.eu-central-1.amazonaws.com/#{midi.midi_file.key}"), target: "blank" do %>
+        <svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 15.8948V19.1053C1 20.2099 1.89543 21.1053 3 21.1053H21.0702C22.1747 21.1053 23.0702 20.2099 23.0702 19.1053V15.8948" stroke="#00D1FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M19.2609 11.179L12.0966 16.7419C12.0605 16.7699 12.01 16.7699 11.9739 16.7419L4.80961 11.179C4.73437 11.1206 4.77569 11 4.87094 11H8.65454C8.70977 11 8.75454 10.9552 8.75454 10.9V0.100001C8.75454 0.0447721 8.79931 0 8.85454 0H15.2159C15.2712 0 15.3159 0.0447715 15.3159 0.1V10.9C15.3159 10.9552 15.3607 11 15.4159 11H19.1995C19.2948 11 19.3361 11.1206 19.2609 11.179Z" fill="#00D1FF"/>
+        </svg>
+      <% end %>
     </div>
-    <%= midi.download_count %>
+    <%= midi.download_count %><!--TODO: MIDI download count increases on download-->
   </div>
  <!-- Button trigger modal -->
   <button type="button" class="midi-button" data-bs-toggle="modal" data-bs-target="#exampleModal">

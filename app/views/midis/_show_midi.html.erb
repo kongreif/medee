@@ -1,10 +1,24 @@
-<div class="show-midi" data-controller="play-midi" data-play-midi-json-value="<%= @midi.midi_json %>" data-play-midi-url-value="<%= cloudinary_url(@midi.midi_file.key) if  midi.midi_file.attached? %>">
-  <div class="show-midi-play" data-action="click->play-midi#playOnClick">
-    <svg width="52" height="51" viewBox="0 0 52 51" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="25.6155" cy="25.1302" rx="25.6155" ry="25.1302" fill="#0085FF"/>
-      <path d="M37.1706 25.1269L19.7526 35.9803L19.2491 15.0933L37.1706 25.1269Z" fill="white"/>
-    </svg>
+<div class="show-midi" data-controller="play-midi" data-play-midi-json-value="<%= @midi.midi_json %>" data-play-midi-url-value="<%= cloudinary_url(midi.midi_file.key) if  midi.midi_file.attached? %>">
+
+  <div class="show-midi-play">
+
+      <div data-action="click->play-midi#playOnClick" data-play-midi-target="playButton" >
+        <svg width="52" height="51" viewBox="0 0 52 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="25.6155" cy="25.1302" rx="25.6155" ry="25.1302" fill="#0085FF"/>
+          <path d="M37.1706 25.1269L19.7526 35.9803L19.2491 15.0933L37.1706 25.1269Z" fill="white"/>
+        </svg>
+      </div>
+
+    <div class="hide" data-action="click->play-midi#playOnClick" data-play-midi-target="pauseButton">
+      <svg width="52" height="51" viewBox="0 0 52 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="25.6155" cy="25.1302" rx="25.6155" ry="25.1302" fill="#0085FF"/>
+        <rect x="18" y="13" width="6" height="25" fill="white"/>
+        <rect x="27" y="13" width="6" height="25" fill="white"/>
+      </svg>
+    </div>
+
   </div>
+
   <div class="show-midi-info">
     <h1><%= midi.title %></h1>
       <p><%= midi.category %></p>

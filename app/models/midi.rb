@@ -3,11 +3,11 @@ class Midi < ApplicationRecord
 
   has_many :midi_moods, dependent: :destroy
   has_many :moods, through: :midi_moods
-  has_many :upvotes
+  has_many :upvotes, dependent: :destroy
   has_one_attached :midi_file
-  has_many :comments
+  has_many :comments, dependent: :destroy
   belongs_to :user
-  
+
   validates :title, presence: true
   validates :key_signature, presence: true
   validates :time_signature, presence: true
