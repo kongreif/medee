@@ -27,11 +27,11 @@
   font-family: $body-font;
 }
 
-.upload-midi-container,  .form-control:focus {
+.upload-midi-container, .form-control:focus {
   color: white !important;
   outline: none !important;
   box-shadow: none!important;
-  background-color: transparent;
+  background-color: transparent !important;
 }
 
 .upload-midi-form-wrap{
