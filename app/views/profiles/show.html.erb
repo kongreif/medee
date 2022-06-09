@@ -53,8 +53,17 @@
 
 <div class="container">
   <div class="profile-container">
-    <!--midi list-->
-    <%= render "/midis/midi_card_list_without_counter", midis: @midis %>
+    <div class="midi-container" data-controller="profile-tabs">
+      <a class="profile-tab active" data-profile-tabs-target="uploadedtab" data-action="click->profile-tabs#uploaded">Uploaded midis</a><a class="profile-tab" data-profile-tabs-target="likedtab" data-action="click->profile-tabs#liked">Liked midis</a>
+      <div class="" data-profile-tabs-target="uploadedmidis">
+        <!--midi upload list-->
+        <%= render "/midis/midi_card_list_without_counter", midis: @midis %>
+      </div>
+      <div class="hide" data-profile-tabs-target="likedmidis">
+        <!--liked midis lis -->
+        <%= render "/midis/midi_card_list_without_counter", midis: @liked_midis %>
+      </div>
+    </div>
     <!--profile card-->
     <div>
       <div class="profile-card">
