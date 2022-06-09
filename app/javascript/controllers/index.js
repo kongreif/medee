@@ -18,3 +18,6 @@ application.register("profile-tabs", ProfileTabsController)
 
 import SearchMidisController from "./search_midis_controller.js"
 application.register("search-midis", SearchMidisController)
+
+import UpdateMidiController from "./update_midi_controller.js"
+application.register("update-midi", UpdateMidiController)
