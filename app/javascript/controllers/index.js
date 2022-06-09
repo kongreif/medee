@@ -18,3 +18,6 @@ application.register("search-midis", SearchMidisController)
 
 import UpdateMidiController from "./update_midi_controller.js"
 application.register("update-midi", UpdateMidiController)
+
+import IncreaseDownloadController from "./increase_download_controller.js"
+application.register("increase-download", IncreaseDownloadController)
