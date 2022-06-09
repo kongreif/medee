@@ -4,14 +4,13 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
     static targets = ["midiId"];
     static values = { midiID: String, count: Number };
+
   connect() {
     // console.log("increase_download_controller::CONNECT");
   }
 
-
-
   updateDownload() {
-    this.midiIdTarget.innerHTML = Number(this.midiIdTarget.dataset.count) + 1
+    this.midiIdTarget.innerHTML = Number(this.midiIdTarget.dataset.count) + 1;
     const url =  `/midi/${this.midiIdTarget.dataset.midi}/download_count`;
     fetch(url);
   }
