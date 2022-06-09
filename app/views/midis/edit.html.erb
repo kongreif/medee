@@ -12,7 +12,7 @@
     <%= f.input :midi_file, as: :file, input_html: { data: {convert_midi_to_json_target: "input", action: "change->convert-midi-to-json#toJson"} }, class: "uploader"%>
     <%= f.input :midi_json, as: :hidden, input_html: { data: { convert_midi_to_json_target: "result" } } %>
     <div>
-      <%= f.button :submit, "Confirmed", class: "neon-button-secondary, neon-button-search" %>
+      <%= f.button :submit, "Update", class: "neon-button-secondary, neon-button-search" %>
     </div>
   <% end %>
 </div>
