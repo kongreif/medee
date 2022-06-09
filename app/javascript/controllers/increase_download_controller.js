@@ -7,8 +7,6 @@ export default class extends Controller {
   connect() {
   }
 
-
-
   updateDownload() {
     this.midiIdTarget.innerHTML = Number(this.midiIdTarget.dataset.count) + 1;
     const url =  `/midi/${this.midiIdTarget.dataset.midi}/download_count`;
