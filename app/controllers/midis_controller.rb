@@ -19,6 +19,8 @@ class MidisController < ApplicationController
   def increase_download_counter
     @midi = Midi.find(params[:id])
     @midi.download_count += 1
+    @midi.save!
+    # raise
   end
 
   def show
