@@ -36,7 +36,7 @@
       <% bottom = lowest_note - 5 %>
       <% bottom = 0 if bottom.negative? %>
       <% top = highest_note + 5 %>
-      <%= scatter_chart(arr_xy, id: "users-chart", min: bottom, max: top, width: :inherit, height: "70px" ) %>
+      <%= scatter_chart(arr_xy, class: "users-chart", min: bottom, max: top, width: :inherit, height: "70px" ) %>
        <!-- Charting / Plotting END -->
     </div>
     <div class="midi-card-details-bottom">

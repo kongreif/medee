@@ -5,10 +5,12 @@ import { Midi } from '@tonejs/midi'
 // Connects to data-controller="play-midi"
 export default class extends Controller {
 
-  static values = {url: String, json: Object}
-  static targets = [ "playButton", "pauseButton" ]
+  static values = { url: String, json: Object }
+  static targets = ["playButton", "pauseButton"]
 
   connect() {
+    console.log(this.jsonValue)
+    console.log("hllo")
   }
 
   async playOnClick() {
@@ -31,7 +33,7 @@ export default class extends Controller {
       this.playMidiFile();
       // await Tone.start();
     }
-    else if (!(this.playButtonTarget.classList.value == "hide") || !(this.playButtonTarget.classList.value == "midi-card-play-button hide") ) {
+    else if (!(this.playButtonTarget.classList.value == "hide") || !(this.playButtonTarget.classList.value == "midi-card-play-button hide")) {
       //music must pause here
       console.log("PAUSE MUSIC");
       // await Tone.getContext().dispose();

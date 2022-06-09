@@ -12,7 +12,6 @@ class MidisController < ApplicationController
     @midis = Midi.search_by_title(params[:query]) if params[:query].present?
     @midis = @midis.where(category: params.values) if params[:query].present? && params.values.size > 3
     dynamic_search_response("midi_card_list", @midis)
-
   end
 
   def show
