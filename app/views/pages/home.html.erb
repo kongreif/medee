@@ -32,7 +32,9 @@
   <div class="rotating-slide">
     <%= render "image_slide"%>
   </div>
-  <div class="midis-container">midis-container</div>
+  <div class="midis-container">
+    <%= render "midi_card_list_popular",midis: @midis%>
+  </div>
 </div>
 
 
