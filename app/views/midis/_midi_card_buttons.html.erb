@@ -26,12 +26,13 @@
         </svg>
       <% end %>
     </div>
-    <div>
-      <% simple_form_for(midi) do |f| %>
-        <% f.input :download_count, as: :hidden, input_html: { data: { increase_download_target: "downloadCounter" } } %>
-      <% end %>
-      <%= midi.download_count %><!--TODO: MIDI download count increases on download-->
+      <div data-increase-download-target="midiDownloadCounter"><%= midi.download_count %><!--TODO: MIDI download count increases on download--></div>
+        <% simple_form_for(midi) do |f| %>
+          <% f.input :midi_json, as: :hidden, input_html: { data: { convert_midi_to_json_target: "result" } } %>
+        <% end %>
+      <div>
     </div>
+
   </div>
  <!-- Button trigger modal -->
   <button type="button" class="midi-button" data-bs-toggle="modal" data-bs-target="#exampleModal">

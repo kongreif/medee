@@ -10,6 +10,10 @@ export default class extends Controller {
   }
 
   updateDownload() {
+<<<<<<< HEAD
+=======
+    console.log(this.midiDownloadCounterTarget);
+>>>>>>> master
     // console.log(typeof this.dl_counter);
     // console.log("updateDownload::clicked");
     // console.log(this.dl_counter);

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :midis do
-    resources :comments, only: %i[create]
+    resources :comments, only: %i[create destroy]
     resources :upvotes, only: %i[create destroy]
   end
   resources :profiles, only: %i[edit update show]

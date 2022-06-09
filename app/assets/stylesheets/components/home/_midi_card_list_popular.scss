@@ -1,0 +1,17 @@
+.midis-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popular-midis-title {
+  position: absolute;
+  text-transform: uppercase;
+  top: 100px;
+  left: 150px;
+  font-family: $body-font;
+  font-size: 25px;
+  letter-spacing: 4px;
+  font-weight: 600;
+}
