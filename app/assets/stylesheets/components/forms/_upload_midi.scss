@@ -1,0 +1,109 @@
+.upload-midi-container {
+  height: 120vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0, 0, 0);
+}
+
+.upload-title{
+  font-family: $body-font;
+  text-transform: uppercase;
+}
+
+.upload-midi-form-backgroud-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-width: 500px;
+  height: 600px;
+}
+
+.upload-midi-container .form-control, .upload-midi-container .form-select{
+  background-color: transparent;
+  color: white;
+  border-radius: 0 !important;
+  font-family: $body-font;
+}
+
+.upload-midi-container,  .form-control:focus {
+  color: white !important;
+  outline: none !important;
+  box-shadow: none!important;
+  background-color: transparent;
+}
+
+.upload-midi-form-wrap{
+  background-color: rgba(0, 0, 0, 0.677);
+  z-index: 20;
+  padding: 20px;
+}
+
+
+.upload-midi-glow-background {
+  // position: absolute;
+  // left: -62px;
+  // height: 766px;
+  // width: 29px;
+  // background-color: white;
+}
+
+
+.upload-midi-glow-background::before , .upload-midi-glow-background:after{
+  content: '';
+  position: absolute;
+  background: linear-gradient(45deg, $neon-blue, rgb(255, 255, 255), $neon-blue, $neon-blue, rgb(255, 255, 255), $neon-blue);
+  // background: linear-gradient(90deg, #e6fb04, #ff6600, #00ff66, $neon-light-blue, #ff00ff, #ff0099, #6e0dd0, #ff3300, $neon-blue, #e6fb04);
+  background-size: 400%;
+  top: -136px;
+  left: -5px;
+  border-radius: 10px;
+  z-index: 1;
+  width: calc(100% + 10px);
+  height: calc(161% + 10px);
+  animation: upload-midi-animate 20s linear infinite;
+}
+
+@keyframes upload-midi-animate{
+  0%{
+    background-position: 0 0;
+  }
+
+  50%{
+    background-position: 400% 0;
+  }
+
+  100%{
+    background-position: 0 0;
+  }
+}
+
+.upload-midi-glow-background::after{
+  filter: blur(20px);
+  opacity: 1;
+}
+
+.confirm-button-wrap{
+  display: flex;
+  justify-content: center;
+}
+
+.confirm-button {
+  text-decoration: none;
+  background-color: transparent !important;
+  color: white !important;
+  border: 2px solid white !important;
+  font-family: $body-font;
+  text-transform: uppercase;
+  padding: 14px 9px;
+  border-radius: 3px;
+  transition: 0.2s;
+}
+
+.confirm-button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 5px white, 0 0 20px rgb(255, 255, 129), 0 0 10px rgb(255, 255, 41);
+  transition-delay: 0.2s;
+  color: black;
+}
