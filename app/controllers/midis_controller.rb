@@ -56,6 +56,7 @@ class MidisController < ApplicationController
 
   def edit
     @midi = Midi.find(params[:id])
+    @text = "Edit - MIDI"
   end
 
   def update

@@ -8,6 +8,7 @@
 @import "home/logo";
 @import "home/banner";
 @import "home/search";
+@import "home/midi_card_list_popular";
 
 @import "image-slide/image_slide";
 
@@ -25,3 +26,9 @@
 @import "profile_banner";
 @import "comment";
 @import "avatar";
+
+@import "devise/login_page";
+@import "devise/signup_page";
+
+@import "forms/upload_midi";
+@import "forms/edit_midi";

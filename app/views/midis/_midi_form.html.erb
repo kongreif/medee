@@ -1,0 +1,27 @@
+<div class="upload-midi-container" data-controller="convert-midi-to-json">
+  <div class="upload-midi-form-backgroud-wrap">
+  <% if params[:id].present? %>
+    <div class="upload-title text-center mb-5"><h1>Edit your midi</h1></div>
+    <% else %>
+    <div class="upload-title text-center mb-5"><h1>Upload your midi</h1></div>
+    <% end %>
+
+    <div class="upload-midi-glow-background"></div>
+    <div class="upload-midi-form-wrap">
+      <%= simple_form_for(@midi) do |f| %>
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :key_signature, collection: Midi.key_signatures.map {|key, value| [key.titleize, Midi.key_signatures.key(value)]} %>
+        <%= f.input :time_signature %>
+        <%= f.input :bpm %>
+        <%= f.input :category, collection: Midi.categories.map {|key, value| [key.titleize, Midi.categories.key(value)]} %>
+        <%= f.input :mood_ids, collection: Mood.all, as: :check_boxes, include_hidden: false, label: 'moods' %>
+        <%= f.input :midi_file, as: :file, input_html: { data: {convert_midi_to_json_target: "input", action: "change->convert-midi-to-json#toJson"} }, class: "uploader"%>
+        <%= f.input :midi_json, as: :hidden, input_html: { data: { convert_midi_to_json_target: "result" } } %>
+        <div class="confirm-button-wrap">
+          <%= f.button :submit, "Upload", class: "confirm-button" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
