@@ -10,5 +10,8 @@ application.register("convert-midi-to-json", ConvertMidiToJsonController)
 import PlayMidiController from "./play_midi_controller.js"
 application.register("play-midi", PlayMidiController)
 
+import ProfileTabsController from "./profile_tabs_controller.js"
+application.register("profile-tabs", ProfileTabsController)
+
 import SearchMidisController from "./search_midis_controller.js"
 application.register("search-midis", SearchMidisController)

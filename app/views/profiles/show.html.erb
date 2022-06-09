@@ -53,8 +53,44 @@
 
 <div class="container">
   <div class="profile-container">
-    <!--midi list-->
-    <%= render "/midis/midi_card_list_without_counter", midis: @midis %>
+    <div class="midi-container" data-controller="profile-tabs">
+      <a class="profile-tab active" data-profile-tabs-target="uploadedtab" data-action="click->profile-tabs#uploaded">Uploaded midis</a><a class="profile-tab" data-profile-tabs-target="likedtab" data-action="click->profile-tabs#liked">Liked midis</a>
+      <div class="" data-profile-tabs-target="uploadedmidis">
+        <!--midi upload list-->
+        <% if @midis.empty? %>
+          <% if @user = current_user %>
+          <br>
+          <br>
+            <a class="neon-button-secondary profile-upload" href="/midis/new">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              upload midi
+            </a>
+          <% else %>
+            <p>This user didn't upload a midi yet</p>
+          <% end %>
+        <% end %>
+        <%= render "/midis/midi_card_list_without_counter", midis: @midis %>
+      </div>
+      <div class="hide" data-profile-tabs-target="likedmidis">
+        <!--liked midis lis -->
+        <% if @liked_midis.empty? %>
+          <% if @user = current_user %>
+            <br>
+            <br>
+            <p>You didn't like any midis yet</p>
+          <% else %>
+            <br>
+            <br>
+            <p>This user didn't like any midis yet</p>
+          <% end %>
+        <% else %>
+          <%= render "/midis/midi_card_list_without_counter", midis: @liked_midis %>
+        <% end %>
+      </div>
+    </div>
     <!--profile card-->
     <div>
       <div class="profile-card">
