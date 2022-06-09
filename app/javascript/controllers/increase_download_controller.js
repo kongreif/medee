@@ -4,7 +4,9 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
     static targets = ["midiId"];
     static values = { midiID: String, count: Number };
+
   connect() {
+    // console.log("increase_download_controller::CONNECT");
   }
 
   updateDownload() {
