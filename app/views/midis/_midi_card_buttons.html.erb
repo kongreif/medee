@@ -17,16 +17,22 @@
     </div>
     <%= midi.upvotes.count %>
   </div>
-  <div class="midi-card-details-bottom-downloads">
+  <div class="midi-card-details-bottom-downloads" data-controller="increase-download">
     <div>
       <%= link_to ("https://medee-870.s3.eu-central-1.amazonaws.com/#{midi.midi_file.key}"), target: "blank" do %>
-        <svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg data-action="click->increase-download#updateDownload" width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M1 15.8948V19.1053C1 20.2099 1.89543 21.1053 3 21.1053H21.0702C22.1747 21.1053 23.0702 20.2099 23.0702 19.1053V15.8948" stroke="#00D1FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M19.2609 11.179L12.0966 16.7419C12.0605 16.7699 12.01 16.7699 11.9739 16.7419L4.80961 11.179C4.73437 11.1206 4.77569 11 4.87094 11H8.65454C8.70977 11 8.75454 10.9552 8.75454 10.9V0.100001C8.75454 0.0447721 8.79931 0 8.85454 0H15.2159C15.2712 0 15.3159 0.0447715 15.3159 0.1V10.9C15.3159 10.9552 15.3607 11 15.4159 11H19.1995C19.2948 11 19.3361 11.1206 19.2609 11.179Z" fill="#00D1FF"/>
         </svg>
       <% end %>
     </div>
-    <%= midi.download_count %><!--TODO: MIDI download count increases on download-->
+      <div data-increase-download-target="midiDownloadCounter"><%= midi.download_count %><!--TODO: MIDI download count increases on download--></div>
+        <% simple_form_for(midi) do |f| %>
+          <% f.input :midi_json, as: :hidden, input_html: { data: { convert_midi_to_json_target: "result" } } %>
+        <% end %>
+      <div>
+    </div>
+
   </div>
  <!-- Button trigger modal -->
   <button type="button" class="midi-button" data-bs-toggle="modal" data-bs-target="#exampleModal">

@@ -12,8 +12,7 @@ class MidisController < ApplicationController
     @midis = Midi.search_by_title(params[:query]) if params[:query].present?
     @midis = @midis.where(category: params.values) if params[:query].present? && params.values.size > 3
     dynamic_search_response("midi_card_list", @midis)
-    # @filtered_midis = @filtered_midis.where(category: params.values)
-    # raise
+
   end
 
   def show
@@ -21,28 +20,23 @@ class MidisController < ApplicationController
     @comment = Comment.new
     authorize @midi
 
-    # Charting / Plotting START
-    # -------------------------------------------------------------------------------------
+    # Charting / Plotting START ==========================================
     json = JSON.parse(@midi.midi_json)
     @chart_data = []
     arr_notes = json["tracks"][0]["notes"]
     arr_notes.each { |note| @chart_data << [note["time"], note["midi"]] }
-    # find the lowest note
+    # find the lowest/highest note
     lowest_note = 127
-    arr_notes.each do |note|
-      lowest_note = note["midi"] if note["midi"] < lowest_note
-    end
-    # find the highest note
     highest_note = 1
     arr_notes.each do |note|
+      lowest_note = note["midi"] if note["midi"] < lowest_note
       highest_note = note["midi"] if note["midi"] > highest_note
     end
     # adjusted y-axis spectrum based on hightes/lowest note
     @bottom = lowest_note - 5
     @bottom = 0 if @bottom.negative?
     @top = highest_note + 5
-    # -------------------------------------------------------------------------------------
-    # Charting / Plotting END
+    # Charting / Plotting END ============================================
   end
 
   def new
@@ -50,6 +44,7 @@ class MidisController < ApplicationController
   end
 
   def create
+
     @midi = Midi.new(midi_params)
     authorize @midi
     @midi.user = current_user
@@ -85,7 +80,7 @@ class MidisController < ApplicationController
   private
 
   def midi_params
-    params.require(:midi).permit(:title, :key_signature, :time_signature, :description, :midi_file, :midi_json, :bpm, :category, mood_ids: [])
+    params.require(:midi).permit(:title, :key_signature, :time_signature, :description, :midi_file, :midi_json, :chart_data, :bpm, :category, mood_ids: [])
   end
 
   def dynamic_search_response(str_partial, query_data)
