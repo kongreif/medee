@@ -23,19 +23,21 @@
       <div class="midi-card-details-track"><%= link_to midi.title, midi_path(midi) %></div>
       <div><%= midi.category %></div>
     </div>
-    <div class="midi-card-details-image">
-      <!--
-      , min: @bottom, max: @top,
-      # Charting / Plotting START
-      # -------------------------------------------------------------------------------------
-      -->
-      <%= scatter_chart(eval(midi.chart_data), id: "users-chart", width: :inherit, height: "70px" ) %>
-      <%# <%= scatter_chart(midi.chart_data, min: bottom, max: top, id: "users-chart", width: :inherit, height: "70px" ) %>
-       <!--
-      # -------------------------------------------------------------------------------------
-      # Charting / Plotting END
-      -->
-
+      <!-- Charting / Plotting START -->
+      <% arr_xy = eval(midi.chart_data) %>
+      <!-- find the lowest/highes note -->
+      <% lowest_note = 127 %>
+      <% highest_note = 1 %>
+      <% arr_xy.each do |note| %>
+        <% lowest_note = note[1] if note[1] < lowest_note %>
+        <% highest_note = note[1] if note[1] > highest_note %>
+      <% end %>
+      <!-- adjusted y-axis spectrum based on hightes/lowest note -->
+      <% bottom = lowest_note - 5 %>
+      <% bottom = 0 if @bottom.negative? %>
+      <% top = highest_note + 5 %>
+      <%= scatter_chart(arr_xy, id: "users-chart", min: bottom, max: top, width: :inherit, height: "70px" ) %>
+       <!-- Charting / Plotting END -->
     </div>
     <div class="midi-card-details-bottom">
       <%= render "/midis/midi_card_buttons", midi: midi %>
