@@ -2,9 +2,8 @@
   <div class="login-form-background-wrap">
     <div class="login-glow-background"></div>
     <div class="login-form-wrap">
-      <div class="login-title text-center mb-3 mt-3">
+      <div class="login-title text-center mb-5 mt-3">
         <h1>MEDEE</h1>
-        <h6>Do you already have an account?</h6>
       </div>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
         <div class="form-inputs">
@@ -20,7 +19,7 @@
         <div class="buttons-wrap">
           <div>
             <%= f.button :submit, "Log in", class: "login-button", onMouseOver: "color:red", style: "border: 2px solid white; color: white; font-family: $body-font;
-text-transform: uppercase;" %>
+              text-transform: uppercase;" %>
           </div>
             <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
               <%= link_to "Forgot your password?", new_password_path(resource_name), style: "margin-top: 8px; color: #fd0d0dad;"%><br />
