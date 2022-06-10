@@ -26,7 +26,7 @@
 .glow-background::before , .glow-background:after{
   content: '';
   position: absolute;
-  background: linear-gradient(90deg, $neon-blue, white, $neon-blue, $neon-blue, white, $neon-blue);
+  background: linear-gradient(90deg, #0085FF, #7ec1ff, #abd6ff, #7ec1ff,#0085FF);
   // background: linear-gradient(90deg, #e6fb04, #ff6600, #00ff66, $neon-light-blue, #ff00ff, #ff0099, #6e0dd0, #ff3300, $neon-blue, #e6fb04);
   background-size: 400%;
   width: calc(100%);

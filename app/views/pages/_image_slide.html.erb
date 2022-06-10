@@ -1,5 +1,13 @@
 <p class="slider-title">POPULAR ARTISTS</p>
 <div class="slider">
+  <% @profiles.first(8).each_with_index do |profile, index| %>
+    <% if profile.user.photo.attached? %>
+     <span style=<%= "--i:#{index + 1};" %> ><p class="artist-name"><%= profile.user.username %> </p><%= image_tag profile.user.photo, class: "img#{index + 1}" %></span>
+    <% else %>
+      <span style=<%= "--i:#{index + 1};" %> ><p class="artist-name"><%= profile.user.username %> </p><%= image_tag "profile-picture-placeholder.png", class: "img#{index + 1}" %></span>
+    <% end %>
+  <% end %>
+  <!--
   <span style="--i:1;"><p class="artist-name">John Mayer</p><%= image_tag "john-mayer.png", class: "img1" %></span>
   <span style="--i:2;"><p class="artist-name">John Mayer</p><%= image_tag "john-mayer.png", class: "img1" %></span>
   <span style="--i:3;"><p class="artist-name">John Mayer</p><%= image_tag "john-mayer.png", class: "img1" %></span>
@@ -8,4 +16,5 @@
   <span style="--i:6;"><p class="artist-name">John Mayer</p><%= image_tag "john-mayer.png", class: "img1" %></span>
   <span style="--i:7;"><p class="artist-name">John Mayer</p><%= image_tag "john-mayer.png", class: "img1" %></span>
   <span style="--i:8;"><p class="artist-name">John Mayer</p><%= image_tag "john-mayer.png", class: "img1" %></span>
+  -->
 </div>

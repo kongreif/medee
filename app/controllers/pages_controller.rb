@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @midi = Midi.new
+    @profiles = policy_scope(Profile.all)
   end
 end
